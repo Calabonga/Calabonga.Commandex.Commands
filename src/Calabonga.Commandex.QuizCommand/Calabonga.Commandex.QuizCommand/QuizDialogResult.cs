@@ -6,17 +6,16 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace Calabonga.Commandex.QuizCommand;
 
-public partial class QuizDialogResult : ViewModelBase, IDialogResult
+public partial class QuizDialogResult : DefaultDialogResult
 {
-    private readonly HttpClient _client;
+    private readonly HttpClient _client = new();
 
     public QuizDialogResult()
     {
-        _client = new HttpClient();
         _client.BaseAddress = new Uri("https://quiz.calabonga.net/");
     }
 
-    public string DialogTitle => "Quiz Title";
+    public override string DialogTitle => "Quiz Title";
 
     [ObservableProperty]
     private Question? _question;
