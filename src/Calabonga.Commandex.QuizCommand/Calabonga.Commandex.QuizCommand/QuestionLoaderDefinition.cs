@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Commandex.QuizCommand;
 
-public class QuizActionDefinition : AppDefinition
+public class QuestionLoaderDefinition : AppDefinition
 {
     /// <summary>
     /// Configure services for current application
@@ -14,6 +14,6 @@ public class QuizActionDefinition : AppDefinition
     {
         services.AddScoped<QuizDialogView>();
         services.AddScoped<QuizDialogResult>();
-        services.AddScoped<ICommandexCommand, QuizCommand>();
+        services.AddScoped<ICommandexCommand, QuestionLoadedCommand>();
     }
 }

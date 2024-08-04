@@ -4,9 +4,9 @@ using Calabonga.Commandex.Engine.Commands;
 
 namespace Calabonga.Commandex.QuizCommand;
 
-public class QuizCommand : CommandexCommand<QuizDialogView, QuizDialogResult>
+public class QuestionLoadedCommand : CommandexCommand<QuizDialogView, QuizDialogResult>
 {
-    public QuizCommand(IDialogService dialogService) : base(dialogService) { }
+    public QuestionLoadedCommand(IDialogService dialogService) : base(dialogService) { }
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
@@ -14,6 +14,5 @@ public class QuizCommand : CommandexCommand<QuizDialogView, QuizDialogResult>
 
     public override string Description => "Загрузчик вопросов без возможности ответить со стороннего сервиса, но с возможностью показать загруженные данные.";
 
-    public override string Version => "v1.0.0-beta-6";
-
+    public override string Version => "v1.0.0-beta-8";
 }

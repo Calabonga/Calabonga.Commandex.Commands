@@ -1,6 +1,8 @@
-﻿using System.Text.Json;
-using Calabonga.Commandex.Engine;
+﻿using Calabonga.Commandex.Engine;
 using Calabonga.Commandex.Engine.Commands;
+using Calabonga.Commandex.Engine.Exceptions;
+using Calabonga.OperationResults;
+using System.Text.Json;
 
 namespace Calabonga.Commandex.ExhibitCommand;
 
@@ -8,17 +10,15 @@ public class LoadExhibitCommand : EmptyCommandexCommand<Exhibit?>
 {
     private readonly HttpClient _client = new();
 
-    public LoadExhibitCommand()
+    public LoadExhibitCommand() => _client.BaseAddress = new Uri("https://api.calabonga.com");
+
+    public override OperationEmpty<OpenDialogException> ExecuteCommand()
     {
-        _client.BaseAddress = new Uri("https://api.calabonga.com");
+        Result = AsyncHelper.RunSync(ExecuteAsync);
+        return Operation.Result();
     }
 
-    public override string Version => "v1.0.0-beta.8";
-
-    public override async Task ShowDialogAsync()
-    {
-        Result = await ExecuteAsync();
-    }
+    public override string Version => "v1.0.0-beta.9";
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
@@ -27,6 +27,8 @@ public class LoadExhibitCommand : EmptyCommandexCommand<Exhibit?>
     public override string DisplayName => "Получение экспоната из Музея Юмора";
 
     public override string Description => "Запрос на удаленный API с целью получить экспонат одного из видов: анекдот, история, хокку, фразы и изречение, стишок и другие. Загруженные данные не отображаются.";
+
+    public override bool IsPushToShellEnabled => true;
 
     private async Task<Exhibit?> ExecuteAsync()
     {

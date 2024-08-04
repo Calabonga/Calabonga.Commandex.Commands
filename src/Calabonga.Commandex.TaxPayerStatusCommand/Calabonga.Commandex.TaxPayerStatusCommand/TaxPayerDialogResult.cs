@@ -2,6 +2,7 @@
 using System.Net.Http.Json;
 using System.Windows;
 using Calabonga.Commandex.Engine;
+using Calabonga.Utils.TokenGeneratorCore;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -14,6 +15,7 @@ public partial class TaxPayerDialogResult : DefaultDialogResult
     public TaxPayerDialogResult()
     {
         _client.BaseAddress = new Uri("https://statusnpd.nalog.ru");
+        Title = "Проверка на nalog.ru (code:" + TokenGenerator.Generate(6) + ")";
     }
 
     [ObservableProperty]
@@ -22,8 +24,6 @@ public partial class TaxPayerDialogResult : DefaultDialogResult
 
     [ObservableProperty]
     private NalogResponse? _nalogResponse;
-
-    public override string DialogTitle => "Проверка на nalog.ru";
 
     /// <summary>
     /// // Calabonga: Summary required (IDialogResult 2024-08-02 10:09)

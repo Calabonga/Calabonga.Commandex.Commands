@@ -1,8 +1,9 @@
-﻿using System.Net.Http;
-using System.Text.Json;
-using Calabonga.Commandex.Engine;
+﻿using Calabonga.Commandex.Engine;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.Net.Http;
+using System.Text.Json;
+using System.Windows;
 
 namespace Calabonga.Commandex.QuizCommand;
 
@@ -13,9 +14,8 @@ public partial class QuizDialogResult : DefaultDialogResult
     public QuizDialogResult()
     {
         _client.BaseAddress = new Uri("https://quiz.calabonga.net/");
+        Title = "Question Loaded";
     }
-
-    public override string DialogTitle => "Quiz Title";
 
     [ObservableProperty]
     private Question? _question;
@@ -32,4 +32,8 @@ public partial class QuizDialogResult : DefaultDialogResult
         Question = JsonSerializer.Deserialize<Question>(content, JsonSerializerOptionsExt.Cyrillic);
         IsBusy = false;
     }
+
+    public override ResizeMode ResizeMode => ResizeMode.CanMinimize;
+
+    public override SizeToContent SizeToContent => SizeToContent.WidthAndHeight;
 }

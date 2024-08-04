@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:quizCommand="clr-namespace:Calabonga.Commandex.QuizCommand"
              mc:Ignorable="d" 
-             MinWidth="800" MinHeight="450"
+             Width="600" MinHeight="400"
              d:DataContext="{d:DesignInstance Type=quizCommand:QuizDialogResult}">
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
@@ -27,13 +27,13 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Column="0" Grid.Row="0" TextAlignment="Center" FontSize="18"
                    Grid.ColumnSpan="2"
-                   Text="{Binding QuestionText}"/>
+                   Text="{Binding QuestionText}" TextWrapping="Wrap"/>
             <TextBlock Grid.Column="0" Grid.Row="1" TextAlignment="Center" FontSize="14"
                    Text="{Binding AnswerA}"/>
             <TextBlock Grid.Column="1" Grid.Row="1" TextAlignment="Center" FontSize="14"
@@ -42,9 +42,11 @@
                    Text="{Binding AnswerC}"/>
             <TextBlock Grid.Column="1" Grid.Row="2" TextAlignment="Center" FontSize="14"
                    Text="{Binding AnswerD}"/>
+           
 
         </Grid>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <ProgressBar Margin="5" IsIndeterminate="True" Width="140" Height="10" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" />
             <Button MinWidth="150" Content="Еще вопрос" Command="{Binding LoadQuestionCommand}"/>
         </StackPanel>
     </Grid>

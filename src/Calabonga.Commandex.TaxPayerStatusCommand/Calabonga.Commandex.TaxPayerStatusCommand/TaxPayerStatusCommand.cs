@@ -3,9 +3,9 @@ using Calabonga.Commandex.Engine.Commands;
 
 namespace Calabonga.Commandex.TaxPayerStatusCommand;
 
-public class TaxPayerCommand : CommandexCommand<TaxPayerDialogView, TaxPayerDialogResult>
+public class TaxPayerStatusCommand : CommandexCommand<TaxPayerDialogView, TaxPayerDialogResult>
 {
-    public TaxPayerCommand(IDialogService dialogService) : base(dialogService) { }
+    public TaxPayerStatusCommand(IDialogService dialogService) : base(dialogService) { }
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
@@ -16,4 +16,12 @@ public class TaxPayerCommand : CommandexCommand<TaxPayerDialogView, TaxPayerDial
     public override string Version => "v1.0.0-beta.4";
 
     public override bool IsPushToShellEnabled => true;
+
+    protected override TaxPayerDialogResult SetResult(TaxPayerDialogResult result)
+    {
+        return new TaxPayerDialogResult
+        {
+            NalogResponse = result.NalogResponse,
+        };
+    }
 }
