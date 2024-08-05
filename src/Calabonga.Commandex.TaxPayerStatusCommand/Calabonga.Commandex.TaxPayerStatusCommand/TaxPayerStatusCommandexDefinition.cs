@@ -20,13 +20,11 @@ public class TaxPayerStatusCommandexDefinition : AppDefinition
     }
 }
 
-
 public class TaxPayerStatusCommandNugetDependency : INugetDependency
 {
     public Type Type => typeof(TaxPayerStatusCommand);
 
     public List<NugetDependency> Dependencies => [
-        new NugetDependency { Name = "Calabonga.TokenGeneratorCore", Version = "1.0.0" },
-        //new NugetDependency { Name = "Calabonga.Results", Version = "1.1.0" }
+        new NugetDependency { Name = "Calabonga.TokenGeneratorCore", Version = "1.0.0" }
     ];
 }

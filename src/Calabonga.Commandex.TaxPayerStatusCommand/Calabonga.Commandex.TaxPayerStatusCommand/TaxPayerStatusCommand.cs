@@ -17,11 +17,8 @@ public class TaxPayerStatusCommand : CommandexCommand<TaxPayerDialogView, TaxPay
 
     public override bool IsPushToShellEnabled => true;
 
-    protected override TaxPayerDialogResult SetResult(TaxPayerDialogResult result)
+    protected override TaxPayerDialogResult SetResult(TaxPayerDialogResult result) => new()
     {
-        return new TaxPayerDialogResult
-        {
-            NalogResponse = result.NalogResponse,
-        };
-    }
+        NalogResponse = result.NalogResponse,
+    };
 }
