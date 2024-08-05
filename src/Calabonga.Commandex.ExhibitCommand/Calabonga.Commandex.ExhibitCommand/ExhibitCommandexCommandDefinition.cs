@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Commandex.ExhibitCommand;
 
-public class ExhibitActionDefinition : AppDefinition
+public class ExhibitCommandexCommandDefinition : AppDefinition
 {
     /// <summary>
     /// Configure services for current application
@@ -12,6 +12,6 @@ public class ExhibitActionDefinition : AppDefinition
     /// <param name="services">instance of <see cref="IServiceCollection"/></param>
     public override void ConfigureServices(IServiceCollection services)
     {
-        services.AddScoped<ICommandexCommand, LoadExhibitCommand>();
+        services.AddScoped<ICommandexCommand, LoadExhibitCommandexCommand>();
     }
 }

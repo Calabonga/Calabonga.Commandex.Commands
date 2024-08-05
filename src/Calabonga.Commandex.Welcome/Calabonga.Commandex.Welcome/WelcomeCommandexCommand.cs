@@ -10,7 +10,7 @@ public class WelcomeCommandexCommand : EmptyCommandexCommand<string>
 
     public override OperationEmpty<OpenDialogException> ExecuteCommand()
     {
-        Result = "Welcome";
+        Result = $"Welcome from {nameof(WelcomeCommandexCommand)}";
         return Operation.Result();
     }
 
@@ -20,8 +20,7 @@ public class WelcomeCommandexCommand : EmptyCommandexCommand<string>
 
     public override string Description => "Это демонстрация по реализации команды для Commandex.";
 
-    public override string Version => "1.0.0-beta.2";
-
+    public override string Version => "1.0.0-beta.3";
 
     protected override string? Result { get; set; }
 }

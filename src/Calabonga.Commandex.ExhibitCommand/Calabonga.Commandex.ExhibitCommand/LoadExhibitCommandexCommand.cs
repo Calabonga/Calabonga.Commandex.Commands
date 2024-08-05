@@ -6,11 +6,11 @@ using System.Text.Json;
 
 namespace Calabonga.Commandex.ExhibitCommand;
 
-public class LoadExhibitCommand : EmptyCommandexCommand<Exhibit?>
+public class LoadExhibitCommandexCommand : EmptyCommandexCommand<Exhibit?>
 {
     private readonly HttpClient _client = new();
 
-    public LoadExhibitCommand() => _client.BaseAddress = new Uri("https://api.calabonga.com");
+    public LoadExhibitCommandexCommand() => _client.BaseAddress = new Uri("https://api.calabonga.com");
 
     public override OperationEmpty<OpenDialogException> ExecuteCommand()
     {
@@ -18,7 +18,7 @@ public class LoadExhibitCommand : EmptyCommandexCommand<Exhibit?>
         return Operation.Result();
     }
 
-    public override string Version => "v1.0.0-beta.9";
+    public override string Version => "v1.0.0-beta.10";
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
