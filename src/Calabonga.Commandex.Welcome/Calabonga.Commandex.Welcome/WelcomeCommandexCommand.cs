@@ -20,7 +20,7 @@ public class WelcomeCommandexCommand : EmptyCommandexCommand<string>
 
     public override string Description => "Это демонстрация по реализации команды для Commandex.";
 
-    public override string Version => "1.0.0-beta.3";
+    public override string Version => "1.0.0-beta.4";
 
     protected override string? Result { get; set; }
 }
