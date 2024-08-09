@@ -1,4 +1,5 @@
-﻿using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine;
+using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.OperationResults;
 
@@ -6,13 +7,22 @@ namespace Calabonga.Commandex.Welcome;
 
 public class WelcomeCommandexCommand : EmptyCommandexCommand<string>
 {
-    public override bool IsPushToShellEnabled => true;
+    private readonly IAppSettings _appSettings;
+
+    public WelcomeCommandexCommand(IAppSettings appSettings)
+    {
+        AppSettings = new CurrentAppSettings(appSettings.CommandsPath);
+    }
 
     public override OperationEmpty<OpenDialogException> ExecuteCommand()
     {
-        Result = $"Welcome from {nameof(WelcomeCommandexCommand)}";
+        Result = AppSettings.Message;
         return Operation.Result();
     }
+
+    public CurrentAppSettings AppSettings { get; }
+
+    public override bool IsPushToShellEnabled => true;
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
