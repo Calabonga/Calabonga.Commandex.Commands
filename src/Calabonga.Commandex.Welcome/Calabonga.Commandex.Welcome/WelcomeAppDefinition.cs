@@ -8,7 +8,9 @@ public class WelcomeAppDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)
     {
-        services.AddScoped<ICommandexCommand, WelcomeCommandexCommand>();
+        services.AddScoped<ICommandexCommand, WelcomeEmptyCommandexCommand>();
         services.AddScoped<ICommandexCommand, WelcomeResultCommandexCommand>();
+        services.AddScoped<ICommandexCommand, DemoWizardDialogCommandexCommand>();
+        services.AddScoped<DemoWizardDialogResult>();
     }
 }
