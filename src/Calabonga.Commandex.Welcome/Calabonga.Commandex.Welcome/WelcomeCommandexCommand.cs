@@ -7,22 +7,18 @@ namespace Calabonga.Commandex.Welcome;
 
 public class WelcomeCommandexCommand : EmptyCommandexCommand<string>
 {
-    private readonly IAppSettings _appSettings;
-
     public WelcomeCommandexCommand(IAppSettings appSettings)
-    {
-        AppSettings = new CurrentAppSettings(appSettings.CommandsPath);
-    }
-
-    public override OperationEmpty<OpenDialogException> ExecuteCommand()
-    {
-        Result = AppSettings.Message;
-        return Operation.Result();
-    }
+        => AppSettings = new CurrentAppSettings(appSettings.CommandsPath);
 
     public CurrentAppSettings AppSettings { get; }
 
     public override bool IsPushToShellEnabled => true;
+
+    public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
+    {
+        Result = AppSettings.Message;
+        return Task.FromResult<OperationEmpty<ExecuteCommandexCommandException>>(Operation.Result());
+    }
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
@@ -30,7 +26,7 @@ public class WelcomeCommandexCommand : EmptyCommandexCommand<string>
 
     public override string Description => "Это демонстрация по реализации команды для Commandex.";
 
-    public override string Version => "1.0.0-beta.4";
+    public override string Version => "1.0.0-beta.5";
 
     protected override string? Result { get; set; }
 }

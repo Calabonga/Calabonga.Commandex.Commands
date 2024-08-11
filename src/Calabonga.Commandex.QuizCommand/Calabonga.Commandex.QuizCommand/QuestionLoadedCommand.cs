@@ -4,7 +4,7 @@ using Calabonga.Commandex.Engine.Commands;
 
 namespace Calabonga.Commandex.QuizCommand;
 
-public class QuestionLoadedCommand : CommandexCommand<QuizDialogView, QuizDialogResult>
+public class QuestionLoadedCommand : DialogCommandexCommand<QuizDialogView, QuizDialogResult>
 {
     public QuestionLoadedCommand(IDialogService dialogService) : base(dialogService) { }
 

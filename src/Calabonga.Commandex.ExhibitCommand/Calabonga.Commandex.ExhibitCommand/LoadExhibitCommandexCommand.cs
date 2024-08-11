@@ -12,13 +12,13 @@ public class LoadExhibitCommandexCommand : EmptyCommandexCommand<Exhibit?>
 
     public LoadExhibitCommandexCommand() => _client.BaseAddress = new Uri("https://api.calabonga.com");
 
-    public override OperationEmpty<OpenDialogException> ExecuteCommand()
+    public override string Version => "v1.0.0-beta.11";
+
+    public override async Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {
-        Result = AsyncHelper.RunSync(ExecuteAsync);
+        Result = await ExecuteAsync();
         return Operation.Result();
     }
-
-    public override string Version => "v1.0.0-beta.10";
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
