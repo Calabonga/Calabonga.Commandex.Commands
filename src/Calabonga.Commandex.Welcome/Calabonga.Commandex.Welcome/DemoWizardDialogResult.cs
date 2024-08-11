@@ -9,6 +9,7 @@ public class DemoWizardDialogResult : WizardDialogResultBase<IWizardStepView, IW
     {
         RegisterStep(new WizardStep1());
         RegisterStep(new WizardStep2());
+        RegisterStep(new WizardStep3());
     }
 }
 
