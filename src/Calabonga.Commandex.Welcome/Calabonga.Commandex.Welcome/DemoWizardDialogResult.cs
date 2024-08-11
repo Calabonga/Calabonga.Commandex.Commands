@@ -1,33 +1,20 @@
-﻿using Calabonga.Commandex.Engine.Base;
-using Calabonga.Commandex.Engine.Dialogs;
-using System.Windows;
+﻿using Calabonga.Commandex.Engine.Wizards;
 
 namespace Calabonga.Commandex.Welcome;
 
-public class DemoWizardDialogResult : ViewModelBase, IWizardDialogResult
+public class DemoWizardDialogResult : WizardDialogResultBase
 {
     public DemoWizardDialogResult()
     {
         Title = "DemoWizard";
     }
 
-    /// <summary>
-    /// Default value <see cref="ResizeMode.NoResize"/>
-    /// </summary>
-    public virtual ResizeMode ResizeMode => ResizeMode.NoResize;
-
-    /// <summary>
-    /// Default value <see cref="SizeToContent.WidthAndHeight"/>
-    /// </summary>
-    public virtual SizeToContent SizeToContent => SizeToContent.WidthAndHeight;
-
-    /// <summary>
-    /// Default value <see cref="WindowStyle.ToolWindow"/>
-    /// </summary>
-    public virtual WindowStyle WindowStyle => WindowStyle.ToolWindow;
-
-    /// <summary>
-    /// Window instance that open this dialog
-    /// </summary>
-    public object? Owner { get; set; }
+    public override List<IWizardStep> ConfigureSteps() =>
+    [
+        new WizardStep("Step1"),
+        new WizardStep("Step2"),
+        new WizardStep("Step3"),
+        new WizardStep("Step4"),
+        new WizardStep("Step5")
+    ];
 }
