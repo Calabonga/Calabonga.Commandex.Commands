@@ -9,5 +9,6 @@ public class WelcomeAppDefinition : AppDefinition
     public override void ConfigureServices(IServiceCollection services)
     {
         services.AddScoped<ICommandexCommand, WelcomeCommandexCommand>();
+        services.AddScoped<ICommandexCommand, WelcomeResultCommandexCommand>();
     }
 }
