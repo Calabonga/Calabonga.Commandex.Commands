@@ -15,6 +15,6 @@ public class DemoWizardDialogCommandexCommand : WizardDialogCommandexCommand<Dem
 
     public override string Description => "Simple demo";
 
-    public override string Version => "1.0.0-alpha.1";
+    public override string Version => "1.0.0-alpha.3";
 
 }
