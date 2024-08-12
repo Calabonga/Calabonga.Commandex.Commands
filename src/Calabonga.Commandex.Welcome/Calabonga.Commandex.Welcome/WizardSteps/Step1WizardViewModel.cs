@@ -1,10 +1,30 @@
 ﻿using Calabonga.Commandex.Engine.Wizards;
+using CommunityToolkit.Mvvm.Input;
 
-namespace Calabonga.Commandex.Welcome.WizardSteps
+namespace Calabonga.Commandex.Welcome.WizardSteps;
+
+public partial class Step1WizardViewModel : WizardStepViewModel
 {
-    public class Step1WizardViewModel : WizardStepViewModelBase { }
+    public Step1WizardViewModel()
+    {
+        Title = "Step 1 - CanLeave:" + CanLeave;
+        AddError("Error from Constructor");
+    }
 
-    public class Step2WizardViewModel : WizardStepViewModelBase { }
+    [RelayCommand]
+    private void AddErrorMessage()
+    {
+        AddError("Error");
+        OnPropertyChanged(nameof(Title));
+        OnPropertyChanged(nameof(CanLeave));
 
-    public class Step3WizardViewModel : WizardStepViewModelBase { }
+    }
+
+    [RelayCommand]
+    private void RemoveErrors()
+    {
+        ResetErrors();
+        OnPropertyChanged(nameof(Title));
+        OnPropertyChanged(nameof(CanLeave));
+    }
 }
