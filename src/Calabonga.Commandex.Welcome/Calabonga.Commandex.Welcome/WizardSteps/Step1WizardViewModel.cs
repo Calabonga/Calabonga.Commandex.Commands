@@ -27,8 +27,13 @@ public partial class Step1WizardViewModel : WizardStepViewModel<PersonViewModel>
         ResetErrors();
     }
 
-    public override void Initialize(PersonViewModel payload)
+    public override void OnEnter(PersonViewModel payload)
     {
         FirstName = payload.FirstName;
+    }
+
+    public override void OnLeave(PersonViewModel payload)
+    {
+        payload.FirstName = FirstName;
     }
 }

@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <TextBlock Text="FirstName"/>
-            <TextBlock Text="{Binding FirstName}"/>
+            <TextBox Text="{Binding FirstName, Mode=TwoWay}"/>
             <StackPanel>
                 <Button Width="100" Margin="4" Content="Add Error" Command="{Binding AddErrorMessageCommand}"/>
                 <Button Width="100" Margin="4" Content="Remove all" Command="{Binding RemoveErrorsCommand}"/>

@@ -16,13 +16,15 @@ public partial class Step2WizardViewModel : WizardStepViewModel<PersonViewModel>
     [ObservableProperty]
     private string _middleName;
 
-    public override bool CanGoBack => true;
-
-    public override void Initialize(PersonViewModel payload)
+    public override void OnEnter(PersonViewModel payload)
     {
         FirstName = payload.FirstName;
         MiddleName = payload.MiddleName;
     }
 
-
+    public override void OnLeave(PersonViewModel payload)
+    {
+        payload.FirstName = FirstName;
+        payload.MiddleName = MiddleName;
+    }
 }

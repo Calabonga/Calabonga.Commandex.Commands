@@ -10,9 +10,9 @@
             <TextBlock Text="Title"/>
             <TextBlock Text="{Binding Title}"/>
             <TextBlock Text="FirstName"/>
-            <TextBlock Text="{Binding FirstName}"/>
+            <TextBox Text="{Binding FirstName, Mode=TwoWay}"/>
             <TextBlock Text="MiddleName"/>
-            <TextBlock Text="{Binding MiddleName}"/>
+            <TextBox Text="{Binding MiddleName, Mode=TwoWay}"/>
         </StackPanel>
     </Grid>
 </UserControl>

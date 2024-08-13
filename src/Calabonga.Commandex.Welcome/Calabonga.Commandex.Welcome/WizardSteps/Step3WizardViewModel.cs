@@ -19,10 +19,17 @@ public partial class Step3WizardViewModel : WizardStepViewModel<PersonViewModel>
     [ObservableProperty]
     private string _lastName;
 
-    public override void Initialize(PersonViewModel payload)
+    public override void OnEnter(PersonViewModel payload)
     {
         FirstName = payload.FirstName;
         MiddleName = payload.MiddleName;
         LastName = payload.LastName;
+    }
+
+    public override void OnLeave(PersonViewModel payload)
+    {
+        payload.FirstName = FirstName;
+        payload.MiddleName = MiddleName;
+        payload.LastName = LastName;
     }
 }
