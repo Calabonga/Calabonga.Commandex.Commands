@@ -14,7 +14,7 @@ public class WelcomeAppDefinition : AppDefinition
         services.AddScoped<ICommandexCommand, WelcomeResultCommandexCommand>();
         services.AddScoped<ICommandexCommand, DemoWizardDialogCommandexCommand>();
 
-        services.AddWizard<DemoWizardViewModel>();
+        services.AddWizard<DemoWizardDialogViewModel>();
 
         services.AddWizardStep<Step1, Step1WizardViewModel>("Шаг №1");
         services.AddWizardStep<Step2, Step2WizardViewModel>("Шаг №2");

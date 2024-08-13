@@ -7,7 +7,7 @@ public partial class Step1WizardViewModel : WizardStepViewModel
 {
     public Step1WizardViewModel()
     {
-        Title = "Step 1 - CanLeave:" + CanLeave;
+        Title = "Step 1 - HasErrors:" + HasErrors;
         AddError("Error from Constructor");
     }
 
@@ -15,8 +15,6 @@ public partial class Step1WizardViewModel : WizardStepViewModel
     private void AddErrorMessage()
     {
         AddError("Error");
-        OnPropertyChanged(nameof(Title));
-        OnPropertyChanged(nameof(CanLeave));
 
     }
 
@@ -24,7 +22,5 @@ public partial class Step1WizardViewModel : WizardStepViewModel
     private void RemoveErrors()
     {
         ResetErrors();
-        OnPropertyChanged(nameof(Title));
-        OnPropertyChanged(nameof(CanLeave));
     }
 }

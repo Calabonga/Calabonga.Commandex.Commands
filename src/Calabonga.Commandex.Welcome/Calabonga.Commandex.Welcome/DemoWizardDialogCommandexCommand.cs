@@ -3,7 +3,7 @@ using Calabonga.Commandex.Engine.Dialogs;
 
 namespace Calabonga.Commandex.Welcome;
 
-public class DemoWizardDialogCommandexCommand : WizardDialogCommandexCommand<DemoWizardViewModel>
+public class DemoWizardDialogCommandexCommand : WizardDialogCommandexCommand<DemoWizardDialogViewModel>
 {
     public DemoWizardDialogCommandexCommand(IDialogService dialogService) : base(dialogService)
     {

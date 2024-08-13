@@ -8,4 +8,6 @@ public class Step2WizardViewModel : WizardStepViewModel
     {
         Title = "Step 2";
     }
+
+    public override bool CanGoBack => true;
 }

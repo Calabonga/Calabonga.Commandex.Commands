@@ -2,10 +2,9 @@
 
 namespace Calabonga.Commandex.Welcome;
 
-public class DemoWizardViewModel : WizardViewModelBase
+public class DemoWizardDialogViewModel : WizardDialogViewModel
 {
-    public DemoWizardViewModel(IServiceProvider serviceProvider)
-        : base(serviceProvider)
+    public DemoWizardDialogViewModel(IWizardStepManager manager) : base(manager)
     {
         Title = "Демонстрация Wizard";
     }
