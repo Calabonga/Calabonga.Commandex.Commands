@@ -13,10 +13,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <TextBlock Text="Title"/>
-            <TextBlock Text="{Binding Title}"/>
-            <Button Content="Add Error" Command="{Binding AddErrorMessageCommand}"/>
-            <Button Content="Remove all" Command="{Binding RemoveErrorsCommand}"/>
+            <TextBlock Text="FirstName"/>
+            <TextBlock Text="{Binding FirstName}"/>
+            <StackPanel>
+                <Button Width="100" Margin="4" Content="Add Error" Command="{Binding AddErrorMessageCommand}"/>
+                <Button Width="100" Margin="4" Content="Remove all" Command="{Binding RemoveErrorsCommand}"/>
+            </StackPanel>
         </StackPanel>
         <ItemsControl Grid.Column="1" ItemsSource="{Binding Errors}">
             <ItemsControl.ItemTemplate>

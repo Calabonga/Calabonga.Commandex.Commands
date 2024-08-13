@@ -16,8 +16,8 @@ public class WelcomeAppDefinition : AppDefinition
 
         services.AddWizard<PersonWizardDialogViewModel>();
 
-        services.AddWizardStep<Step1, Step1WizardViewModel>("Шаг №1");
-        services.AddWizardStep<Step2, Step2WizardViewModel>("Шаг №2");
-        services.AddWizardStep<Step3, Step3WizardViewModel>("Шаг №3");
+        services.AddWizardStep<Step1, Step1WizardViewModel, PersonViewModel>("Шаг №1");
+        services.AddWizardStep<Step2, Step2WizardViewModel, PersonViewModel>("Шаг №2");
+        services.AddWizardStep<Step3, Step3WizardViewModel, PersonViewModel>("Шаг №3");
     }
 }

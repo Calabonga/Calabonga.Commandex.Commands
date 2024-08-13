@@ -7,7 +7,7 @@ namespace Calabonga.Commandex.Welcome;
 /// </summary>
 public class PersonWizardDialogViewModel : WizardDialogViewModel<PersonViewModel>
 {
-    public PersonWizardDialogViewModel(IWizardStepManager manager) : base(manager)
+    public PersonWizardDialogViewModel(IWizardManager<PersonViewModel> manager) : base(manager)
     {
         Title = "Демонстрация Wizard";
     }

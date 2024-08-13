@@ -5,9 +5,9 @@
 /// </summary>
 public class PersonViewModel
 {
-    public string FirstName { get; set; } = null!;
+    public string FirstName { get; set; } = "Your first name";
 
-    public string MiddleName { get; set; } = null!;
+    public string MiddleName { get; set; } = "Your middle name";
 
-    public string LastName { get; set; } = null!;
+    public string LastName { get; set; } = "Your last name";
 }
