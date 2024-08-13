@@ -3,9 +3,9 @@ using Calabonga.Commandex.Engine.Dialogs;
 
 namespace Calabonga.Commandex.Welcome;
 
-public class DemoWizardDialogCommandexCommand : WizardDialogCommandexCommand<DemoWizardDialogViewModel>
+public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<PersonWizardDialogViewModel>
 {
-    public DemoWizardDialogCommandexCommand(IDialogService dialogService) : base(dialogService)
+    public PersonWizardDialogCommandexCommand(IDialogService dialogService) : base(dialogService)
     {
     }
 

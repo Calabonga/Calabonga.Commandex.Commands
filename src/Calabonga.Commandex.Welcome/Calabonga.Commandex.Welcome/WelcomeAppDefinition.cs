@@ -12,9 +12,9 @@ public class WelcomeAppDefinition : AppDefinition
     {
         services.AddScoped<ICommandexCommand, WelcomeEmptyCommandexCommand>();
         services.AddScoped<ICommandexCommand, WelcomeResultCommandexCommand>();
-        services.AddScoped<ICommandexCommand, DemoWizardDialogCommandexCommand>();
+        services.AddScoped<ICommandexCommand, PersonWizardDialogCommandexCommand>();
 
-        services.AddWizard<DemoWizardDialogViewModel>();
+        services.AddWizard<PersonWizardDialogViewModel>();
 
         services.AddWizardStep<Step1, Step1WizardViewModel>("Шаг №1");
         services.AddWizardStep<Step2, Step2WizardViewModel>("Шаг №2");

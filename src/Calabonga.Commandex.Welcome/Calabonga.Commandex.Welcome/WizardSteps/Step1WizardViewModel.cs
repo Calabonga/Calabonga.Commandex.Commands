@@ -8,14 +8,13 @@ public partial class Step1WizardViewModel : WizardStepViewModel
     public Step1WizardViewModel()
     {
         Title = "Step 1 - HasErrors:" + HasErrors;
-        AddError("Error from Constructor");
+        AddError("This is error from constructor");
     }
 
     [RelayCommand]
     private void AddErrorMessage()
     {
-        AddError("Error");
-
+        AddError("Error" + DateTime.Now.ToString("G"));
     }
 
     [RelayCommand]
