@@ -1,18 +1,21 @@
-﻿using Calabonga.Commandex.Engine;
-using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
+using Calabonga.Commandex.Engine.Extensions;
 using Calabonga.OperationResults;
 using System.Text.Json;
 
 namespace Calabonga.Commandex.ExhibitCommand;
 
-public class LoadExhibitCommandexCommand : EmptyCommandexCommand<Exhibit?>
+/// <summary>
+/// Loader items from www.calabonga.com
+/// </summary>
+public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
 {
     private readonly HttpClient _client = new();
 
     public LoadExhibitCommandexCommand() => _client.BaseAddress = new Uri("https://api.calabonga.com");
 
-    public override string Version => "v1.0.0-beta.11";
+    public override string Version => "v1.0.0-beta.12";
 
     public override async Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {
@@ -37,4 +40,6 @@ public class LoadExhibitCommandexCommand : EmptyCommandexCommand<Exhibit?>
         var content = await response.Content.ReadAsStringAsync();
         return JsonSerializer.Deserialize<Exhibit>(content, JsonSerializerOptionsExt.Cyrillic);
     }
+
+
 }

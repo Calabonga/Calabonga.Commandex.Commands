@@ -1,10 +1,10 @@
-﻿using System.Net.Http;
-using System.Net.Http.Json;
-using System.Windows;
-using Calabonga.Commandex.Engine;
+﻿using Calabonga.Commandex.Engine.Dialogs;
 using Calabonga.Utils.TokenGeneratorCore;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Windows;
 
 namespace Calabonga.Commandex.TaxPayerStatusCommand;
 
@@ -24,6 +24,11 @@ public partial class TaxPayerDialogResult : DefaultDialogResult
 
     [ObservableProperty]
     private NalogResponse? _nalogResponse;
+
+    public override void Dispose()
+    {
+
+    }
 
     /// <summary>
     /// // Calabonga: Summary required (IDialogResult 2024-08-02 10:09)

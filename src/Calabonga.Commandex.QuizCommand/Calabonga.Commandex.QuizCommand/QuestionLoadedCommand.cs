@@ -1,6 +1,5 @@
-﻿
-using Calabonga.Commandex.Engine;
-using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
+using Calabonga.Commandex.Engine.Dialogs;
 
 namespace Calabonga.Commandex.QuizCommand;
 
@@ -14,5 +13,5 @@ public class QuestionLoadedCommand : DialogCommandexCommand<QuizDialogView, Quiz
 
     public override string Description => "Загрузчик вопросов без возможности ответить со стороннего сервиса, но с возможностью показать загруженные данные.";
 
-    public override string Version => "v1.0.0-beta-9";
+    public override string Version => "v1.0.0-beta-10";
 }

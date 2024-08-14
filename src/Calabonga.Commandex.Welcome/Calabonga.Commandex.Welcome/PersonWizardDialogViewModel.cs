@@ -22,7 +22,7 @@ public class PersonWizardDialogViewModel : WizardDialogViewModel<PersonViewModel
 
     protected override PersonViewModel InitializeContext() => new();
 
-    public override void OnWizardFinishedExecute(PersonViewModel? payload)
+    protected override void OnWizardFinishedExecute(PersonViewModel? payload)
     {
         if (payload is null)
         {

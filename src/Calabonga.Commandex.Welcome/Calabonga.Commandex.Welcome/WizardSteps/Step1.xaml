@@ -12,11 +12,7 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock 
-        Grid.Column="0"
-        Text="FirstName:" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <TextBox
-        Grid.Column="1"
-        Text="{Binding FirstName, Mode=TwoWay}" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="0" Text="FirstName:" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="1" Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

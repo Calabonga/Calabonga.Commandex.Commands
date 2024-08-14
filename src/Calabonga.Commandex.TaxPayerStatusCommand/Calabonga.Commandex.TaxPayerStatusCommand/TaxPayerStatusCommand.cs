@@ -1,5 +1,5 @@
-﻿using Calabonga.Commandex.Engine;
-using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
+using Calabonga.Commandex.Engine.Dialogs;
 
 namespace Calabonga.Commandex.TaxPayerStatusCommand;
 
@@ -13,7 +13,7 @@ public class TaxPayerStatusCommand : DialogCommandexCommand<TaxPayerDialogView, 
 
     public override string Description => "Публичный сервиса ФНС России «Проверка статуса налогоплательщика налога на профессиональный доход (самозанятого)»";
 
-    public override string Version => "v1.0.0-beta.5";
+    public override string Version => "v1.0.0-beta.7";
 
     public override bool IsPushToShellEnabled => true;
 

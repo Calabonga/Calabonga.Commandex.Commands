@@ -7,11 +7,11 @@ public partial class StepFinalViewModel : WizardStepViewModel<PersonViewModel>
 {
     public StepFinalViewModel()
     {
-        Title = "Thank you!";
+        Title = "Final";
     }
 
     [ObservableProperty]
     private PersonViewModel _person;
 
-    public override void OnEnter(PersonViewModel payload) => Person = payload;
+    public override void OnEnter(PersonViewModel? payload) => Person = payload!;
 }

@@ -11,7 +11,5 @@ public class ExhibitCommandexCommandDefinition : AppDefinition
     /// </summary>
     /// <param name="services">instance of <see cref="IServiceCollection"/></param>
     public override void ConfigureServices(IServiceCollection services)
-    {
-        services.AddScoped<ICommandexCommand, LoadExhibitCommandexCommand>();
-    }
+        => services.AddScoped<ICommandexCommand, LoadExhibitCommandexCommand>();
 }

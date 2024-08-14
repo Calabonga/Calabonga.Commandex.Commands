@@ -1,4 +1,5 @@
-﻿using Calabonga.Commandex.Engine;
+﻿using Calabonga.Commandex.Engine.Dialogs;
+using Calabonga.Commandex.Engine.Extensions;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Net.Http;
@@ -32,6 +33,8 @@ public partial class QuizDialogResult : DefaultDialogResult
         Question = JsonSerializer.Deserialize<Question>(content, JsonSerializerOptionsExt.Cyrillic);
         IsBusy = false;
     }
+
+    public override void Dispose() => _client.Dispose();
 
     public override ResizeMode ResizeMode => ResizeMode.CanMinimize;
 

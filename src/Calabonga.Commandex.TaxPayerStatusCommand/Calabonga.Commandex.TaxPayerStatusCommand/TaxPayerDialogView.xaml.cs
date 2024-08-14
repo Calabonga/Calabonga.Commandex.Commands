@@ -1,5 +1,5 @@
-﻿using System.Windows.Controls;
-using Calabonga.Commandex.Engine;
+﻿using Calabonga.Commandex.Engine.Dialogs;
+using System.Windows.Controls;
 
 namespace Calabonga.Commandex.TaxPayerStatusCommand;
 

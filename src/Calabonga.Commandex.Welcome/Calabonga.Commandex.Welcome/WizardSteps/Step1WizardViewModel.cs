@@ -1,38 +1,32 @@
 ﻿using Calabonga.Commandex.Engine.Wizards;
 using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
+using System.ComponentModel.DataAnnotations;
 
 namespace Calabonga.Commandex.Welcome.WizardSteps;
 
-public partial class Step1WizardViewModel : WizardStepViewModel<PersonViewModel>
+public partial class Step1WizardViewModel : WizardStepValidationViewModel<PersonViewModel>
 {
     public Step1WizardViewModel()
     {
         Title = "Step 1 - HasErrors:" + HasErrors; ;
     }
 
+    [Required]
+    [MinLength(5)]
     [ObservableProperty]
+    [NotifyDataErrorInfo]
     private string _firstName;
 
-    [RelayCommand]
-    private void AddErrorMessage()
+    public override void OnEnter(PersonViewModel? payload)
     {
-        AddError("Error" + DateTime.Now.ToString("G"));
+        FirstName = payload?.FirstName ?? string.Empty;
     }
 
-    [RelayCommand]
-    private void RemoveErrors()
+    public override void OnLeave(PersonViewModel? payload)
     {
-        ResetErrors();
-    }
-
-    public override void OnEnter(PersonViewModel payload)
-    {
-        FirstName = payload.FirstName;
-    }
-
-    public override void OnLeave(PersonViewModel payload)
-    {
-        payload.FirstName = FirstName;
+        if (payload != null)
+        {
+            payload.FirstName = FirstName;
+        }
     }
 }

@@ -18,7 +18,7 @@ public class BooleanToBackgroundColorConverter : IValueConverter
         {
             return valid
                 ? new SolidColorBrush(Colors.Green)
-                : new SolidColorBrush(Colors.Red);
+                : new SolidColorBrush(Colors.LightCoral);
         }
 
         return new SolidColorBrush(Colors.Transparent);

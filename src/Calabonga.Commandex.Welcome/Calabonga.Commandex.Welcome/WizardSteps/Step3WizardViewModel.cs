@@ -1,35 +1,32 @@
 ﻿using Calabonga.Commandex.Engine.Wizards;
 using CommunityToolkit.Mvvm.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Calabonga.Commandex.Welcome.WizardSteps;
 
-public partial class Step3WizardViewModel : WizardStepViewModel<PersonViewModel>
+public partial class Step3WizardViewModel : WizardStepValidationViewModel<PersonViewModel>
 {
     public Step3WizardViewModel()
     {
         Title = "Step 3";
     }
 
-    [ObservableProperty]
-    private string _firstName;
-
-    [ObservableProperty]
-    private string _middleName;
-
+    [Required]
+    [MinLength(5)]
+    [NotifyDataErrorInfo]
     [ObservableProperty]
     private string _lastName;
 
-    public override void OnEnter(PersonViewModel payload)
+    public override void OnEnter(PersonViewModel? payload)
     {
-        FirstName = payload.FirstName;
-        MiddleName = payload.MiddleName;
-        LastName = payload.LastName;
+        LastName = payload?.LastName ?? string.Empty;
     }
 
-    public override void OnLeave(PersonViewModel payload)
+    public override void OnLeave(PersonViewModel? payload)
     {
-        payload.FirstName = FirstName;
-        payload.MiddleName = MiddleName;
-        payload.LastName = LastName;
+        if (payload != null)
+        {
+            payload.LastName = LastName;
+        }
     }
 }

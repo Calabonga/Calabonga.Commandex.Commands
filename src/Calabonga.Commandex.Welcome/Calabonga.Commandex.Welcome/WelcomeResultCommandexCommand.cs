@@ -29,7 +29,7 @@ public class WelcomeResultCommandexCommand : ResultCommandexCommand<string>
 
     public override string Description => "Это демонстрация по реализации команды для Commandex с результатом";
 
-    public override string Version => "1.0.0-beta.1";
+    public override string Version => "1.0.0-beta.7";
 
     protected override string? Result { get; set; }
 }
