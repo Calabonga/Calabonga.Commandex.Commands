@@ -15,6 +15,5 @@ public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<P
 
     public override string Description => "Simple demo";
 
-    public override string Version => "1.0.0-alpha.4";
-
+    public override string Version => "1.0.0-alpha.5";
 }

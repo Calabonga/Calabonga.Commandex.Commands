@@ -7,19 +7,29 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <TextBlock Text="Title"/>
-            <TextBlock Text="{Binding Title}"/>
-            
-            <TextBlock Text="FirstName"/>
-            <TextBlock FontWeight="Bold" Text="{Binding Person.FirstName}"/>
-            
-            <TextBlock Text="MiddleName"/>
-            <TextBlock FontWeight="Bold" Text="{Binding Person.MiddleName}"/>
-            
-            <TextBlock Text="LastName"/>
-            <TextBlock FontWeight="Bold" Text="{Binding Person.LastName}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-        </StackPanel>
+        <TextBlock Text="FirstName" Grid.Column="0" Grid.Row="0"
+                   HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBlock FontWeight="Bold" Text="{Binding Person.FirstName}" 
+                   Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,0,0,0"/>
+
+        <TextBlock Text="MiddleName" Grid.Row="1" Grid.Column="0" 
+                   HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBlock FontWeight="Bold" Text="{Binding Person.MiddleName}"
+                   Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,0,0,0"/>
+
+        <TextBlock Text="LastName"  Grid.Row="2" Grid.Column="0"
+                   HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBlock FontWeight="Bold" Text="{Binding Person.LastName}" 
+                   Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,0,0,0"/>
     </Grid>
 </UserControl>

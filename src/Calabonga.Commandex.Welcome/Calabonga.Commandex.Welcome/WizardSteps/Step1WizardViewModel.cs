@@ -8,8 +8,7 @@ public partial class Step1WizardViewModel : WizardStepViewModel<PersonViewModel>
 {
     public Step1WizardViewModel()
     {
-        Title = "Step 1 - HasErrors:" + HasErrors;
-        AddError("This is error from constructor");
+        Title = "Step 1 - HasErrors:" + HasErrors; ;
     }
 
     [ObservableProperty]

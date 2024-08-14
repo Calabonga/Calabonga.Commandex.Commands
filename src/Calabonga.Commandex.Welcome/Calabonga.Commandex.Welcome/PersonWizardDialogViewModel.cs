@@ -1,4 +1,7 @@
-﻿using Calabonga.Commandex.Engine.Wizards;
+﻿using Calabonga.Commandex.Engine.Extensions;
+using Calabonga.Commandex.Engine.Wizards;
+using Microsoft.Extensions.Logging;
+using System.Text.Json;
 
 namespace Calabonga.Commandex.Welcome;
 
@@ -7,10 +10,26 @@ namespace Calabonga.Commandex.Welcome;
 /// </summary>
 public class PersonWizardDialogViewModel : WizardDialogViewModel<PersonViewModel>
 {
-    public PersonWizardDialogViewModel(IWizardManager<PersonViewModel> manager) : base(manager)
+    private readonly ILogger<PersonWizardDialogViewModel> _logger;
+
+    public PersonWizardDialogViewModel(
+        ILogger<PersonWizardDialogViewModel> logger,
+        IWizardManager<PersonViewModel> manager) : base(manager)
     {
+        _logger = logger;
         Title = "Демонстрация Wizard";
     }
 
     protected override PersonViewModel InitializeContext() => new();
+
+    public override void OnWizardFinishedExecute(PersonViewModel? payload)
+    {
+        if (payload is null)
+        {
+            _logger.LogInformation("Payload is null");
+            return;
+        }
+
+        _logger.LogInformation(JsonSerializer.Serialize(payload, JsonSerializerOptionsExt.Cyrillic));
+    }
 }

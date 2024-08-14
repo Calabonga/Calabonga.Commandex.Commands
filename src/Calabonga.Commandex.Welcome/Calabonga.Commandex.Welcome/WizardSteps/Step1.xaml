@@ -9,23 +9,14 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <TextBlock Text="FirstName"/>
-            <TextBox Text="{Binding FirstName, Mode=TwoWay}"/>
-            <StackPanel>
-                <Button Width="100" Margin="4" Content="Add Error" Command="{Binding AddErrorMessageCommand}"/>
-                <Button Width="100" Margin="4" Content="Remove all" Command="{Binding RemoveErrorsCommand}"/>
-            </StackPanel>
-        </StackPanel>
-        <ItemsControl Grid.Column="1" ItemsSource="{Binding Errors}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding}"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <TextBlock 
+        Grid.Column="0"
+        Text="FirstName:" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBox
+        Grid.Column="1"
+        Text="{Binding FirstName, Mode=TwoWay}" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>
