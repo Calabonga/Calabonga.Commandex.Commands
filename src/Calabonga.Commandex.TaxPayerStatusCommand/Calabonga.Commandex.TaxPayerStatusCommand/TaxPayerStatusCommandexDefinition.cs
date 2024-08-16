@@ -1,5 +1,6 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.NugetDependencies;
+using Calabonga.Commandex.TaxPayerStatusCommand.Core.Views;
 using Calabonga.Wpf.AppDefinitions;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,16 +14,16 @@ public class TaxPayerStatusCommandexDefinition : AppDefinition
     /// <param name="services">instance of <see cref="IServiceCollection"/></param>
     public override void ConfigureServices(IServiceCollection services)
     {
-        services.AddScoped<TaxPayerDialogView>();
-        services.AddScoped<TaxPayerDialogResult>();
-        services.AddScoped<ICommandexCommand, TaxPayerStatusCommand>();
-        services.AddScoped<INugetDependency, TaxPayerStatusCommandNugetDependency>();
+        services.AddTransient<TaxPayerDialogView>();
+        services.AddTransient<Core.ViewModels.TaxPayerDialogResult>();
+        services.AddTransient<ICommandexCommand, Core.TaxPayerStatusCommand>();
+        services.AddTransient<INugetDependency, TaxPayerStatusCommandNugetDependency>();
     }
 }
 
 public class TaxPayerStatusCommandNugetDependency : INugetDependency
 {
-    public Type Type => typeof(TaxPayerStatusCommand);
+    public Type Type => typeof(Core.TaxPayerStatusCommand);
 
     public List<NugetDependency> Dependencies => [
         new NugetDependency { Name = "Calabonga.TokenGeneratorCore", Version = "1.0.0" }
