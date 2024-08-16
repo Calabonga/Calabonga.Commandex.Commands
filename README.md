@@ -1,3 +1,19 @@
+## Commands Types in Commandex
+Все типы перечисленные ниже реализуют интерфейс `ICommandexCommand`, то есть не обязательно наследовать свою команду от одного из существующих типов, можно просто реализовать интерфейс. Но в базоых реализациях очень много полезного.
+
+### EmptyCommandexCommand
+Это самый простой тип команды, которые ничего не должен возвращать на `Shell`, простой триггер, которые можно что-то сделать, и при этом не должен никому ни в чем отчитываться.
+Simplest command type for Commandex. This type does not anything returns to shell.
+
+### ResultCommand
+[в процессе наполнения]
+
+### DialogCommand
+[в процессе наполнения]
+
+### WizardCommand
+[в процессе наполнения]
+
 ## What is Calabonga.Commandex
 
 It's a complex solution with a few repositories:
