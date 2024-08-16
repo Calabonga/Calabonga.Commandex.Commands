@@ -1,8 +1,15 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Extensions;
-using Calabonga.Commandex.Welcome.WizardSteps;
+using Calabonga.Commandex.Welcome.Core;
+using Calabonga.Commandex.Welcome.Core.Entities;
+using Calabonga.Commandex.Welcome.Core.ViewModels;
+using Calabonga.Commandex.Welcome.Core.WizardSteps;
 using Calabonga.Wpf.AppDefinitions;
 using Microsoft.Extensions.DependencyInjection;
+using Step1WizardViewModel = Calabonga.Commandex.Welcome.Core.WizardSteps.Step1WizardViewModel;
+using Step2WizardViewModel = Calabonga.Commandex.Welcome.Core.WizardSteps.Step2WizardViewModel;
+using Step3WizardViewModel = Calabonga.Commandex.Welcome.Core.WizardSteps.Step3WizardViewModel;
+using StepFinalViewModel = Calabonga.Commandex.Welcome.Core.WizardSteps.StepFinalViewModel;
 
 namespace Calabonga.Commandex.Welcome;
 
