@@ -9,8 +9,8 @@ public class CurrentAppSettings : SettingsBase
         Message = Environment.GetEnvironmentVariable("MESSAGE") ?? "Welcome";
     }
 
-    public string Message { get; } = null!;
+    public string Message { get; }
 
-    protected override string CurrentSettings() => GetType().Namespace ?? throw new InvalidOperationException();
+    protected override string CurrentSettings() => GetType().Assembly.GetName().Name ?? throw new InvalidOperationException();
 
 }

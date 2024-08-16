@@ -16,14 +16,14 @@ public class TaxPayerStatusCommandexDefinition : AppDefinition
     {
         services.AddTransient<TaxPayerDialogView>();
         services.AddTransient<Core.ViewModels.TaxPayerDialogResult>();
-        services.AddTransient<ICommandexCommand, Core.TaxPayerStatusCommand>();
+        services.AddTransient<ICommandexCommand, TaxPayerStatusCommand>();
         services.AddTransient<INugetDependency, TaxPayerStatusCommandNugetDependency>();
     }
 }
 
 public class TaxPayerStatusCommandNugetDependency : INugetDependency
 {
-    public Type Type => typeof(Core.TaxPayerStatusCommand);
+    public Type Type => typeof(TaxPayerStatusCommand);
 
     public List<NugetDependency> Dependencies => [
         new NugetDependency { Name = "Calabonga.TokenGeneratorCore", Version = "1.0.0" }
