@@ -1,15 +1,19 @@
 using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
+using Calabonga.Commandex.Engine.Settings;
 using Calabonga.OperationResults;
 using Microsoft.Extensions.Logging;
 
 namespace Calabonga.Commandex.RelatedResultsCommand;
 
+/// <summary>
+/// 
+/// </summary>
 public class SecondCommand : ParameterCommandexCommand<CreatedAtParameter>
 {
     private readonly ILogger<SecondCommand> _logger;
 
-    public SecondCommand(ILogger<SecondCommand> logger)
+    public SecondCommand(ILogger<SecondCommand> logger, IAppSettings appSettings) : base(appSettings)
     {
         _logger = logger;
     }

@@ -1,5 +1,6 @@
 using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
+using Calabonga.Commandex.Engine.Settings;
 using Calabonga.OperationResults;
 using Microsoft.Extensions.Logging;
 
@@ -9,7 +10,7 @@ public class ThirdCommand : ParameterCommandexCommand<CreatedAtParameter>
 {
     private readonly ILogger<ThirdCommand> _logger;
 
-    public ThirdCommand(ILogger<ThirdCommand> logger)
+    public ThirdCommand(ILogger<ThirdCommand> logger, IAppSettings appSettings) : base(appSettings)
     {
         _logger = logger;
     }
@@ -31,5 +32,5 @@ public class ThirdCommand : ParameterCommandexCommand<CreatedAtParameter>
         return Task.FromResult<OperationEmpty<ExecuteCommandexCommandException>>(Operation.Result());
     }
 
-    public bool IsPushToShellEnabled => true;
+    public override bool IsPushToShellEnabled => true;
 }
