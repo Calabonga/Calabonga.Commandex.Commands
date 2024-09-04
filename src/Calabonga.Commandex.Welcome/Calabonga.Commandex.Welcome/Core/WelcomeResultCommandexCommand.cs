@@ -1,8 +1,8 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
-using Calabonga.Commandex.Engine.Settings;
 using Calabonga.Commandex.Welcome.Core.Settings;
 using Calabonga.OperationResults;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Commandex.Welcome.Core;
 
@@ -11,8 +11,11 @@ namespace Calabonga.Commandex.Welcome.Core;
 /// </summary>
 public class WelcomeResultCommandexCommand : ResultCommandexCommand<string>
 {
-    public WelcomeResultCommandexCommand(IAppSettings appSettings)
-        => AppSettings = new CurrentAppSettings(appSettings.CommandsPath);
+    public WelcomeResultCommandexCommand(
+        [FromKeyedServices(nameof(WelcomeAppDefinition))]
+        CurrentAppSettings appSettings)
+        => AppSettings = appSettings;
+
 
     public CurrentAppSettings AppSettings { get; }
 

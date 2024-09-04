@@ -1,8 +1,8 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
-using Calabonga.Commandex.Engine.Settings;
 using Calabonga.Commandex.Welcome.Core.Settings;
 using Calabonga.OperationResults;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace Calabonga.Commandex.Welcome.Core;
@@ -14,10 +14,12 @@ public class WelcomeEmptyCommandexCommand : EmptyCommandexCommand
 {
     private readonly ILogger<WelcomeEmptyCommandexCommand> _logger;
 
-    public WelcomeEmptyCommandexCommand(IAppSettings appSettings, ILogger<WelcomeEmptyCommandexCommand> logger)
+    public WelcomeEmptyCommandexCommand(
+        [FromKeyedServices(nameof(WelcomeAppDefinition))] CurrentAppSettings appSettings,
+        ILogger<WelcomeEmptyCommandexCommand> logger)
     {
         _logger = logger;
-        AppSettings = new CurrentAppSettings(appSettings.CommandsPath);
+        AppSettings = appSettings;
     }
 
     public CurrentAppSettings AppSettings { get; }
