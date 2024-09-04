@@ -5,9 +5,9 @@ using Calabonga.Commandex.TaxPayerStatusCommand.Core.Views;
 
 namespace Calabonga.Commandex.TaxPayerStatusCommand.Core;
 
-public class TaxPayerStatusCommand : DialogCommandexCommand<TaxPayerDialogView, TaxPayerDialogResult>
+public class TaxPayerStatusCommandexCommand : DialogCommandexCommand<TaxPayerDialogView, TaxPayerDialogResult>
 {
-    public TaxPayerStatusCommand(IDialogService dialogService) : base(dialogService) { }
+    public TaxPayerStatusCommandexCommand(IDialogService dialogService) : base(dialogService) { }
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
