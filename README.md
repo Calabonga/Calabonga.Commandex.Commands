@@ -53,7 +53,7 @@ It's a complex solution with a few repositories:
 
 `EmptyCommandexCommand` - это самый простой тип команды, которые ничего не должен возвращать на Shell, простой триггер, которые можно что-то сделать, и при этом не должен никому ни в чем отчитываться. Simplest command type for Commandex. This type does not anything returns to shell.
 
-### 5. Commandex Framework - Модульный монолит. Result-команды. [Видео готовится]
+### [5. Commandex Framework - Модульный монолит. Result-команды.](https://boosty.to/calabonga/posts/6fc9185d-feda-4155-b92b-796607604c58)
 
 `ResultCommandexCommand<T>` - это вид команды, который может вернуть на Shell результаты своей работы. На видео были созданы две новые команды:
 
