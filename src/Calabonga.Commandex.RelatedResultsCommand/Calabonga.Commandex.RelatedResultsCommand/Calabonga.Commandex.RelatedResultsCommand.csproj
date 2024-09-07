@@ -11,7 +11,7 @@
 		<Message Text="Executing Copy Command Task" Importance="High" />
 
 		<PropertyGroup>
-			<PublishedCommandsDir>..\..\..\Calabonga.Commandex.Shell\PublishedCommands</PublishedCommandsDir>
+			<PublishedCommandsDir>..\..\..\..\Calabonga.Commandex.Shell\PublishedCommands</PublishedCommandsDir>
 		</PropertyGroup>
 
 		<Copy SourceFiles="$(TargetDir)$(ProjectName).dll;$(TargetDir)$(ProjectName).pdb" DestinationFolder="$(PublishedCommandsDir)" />
@@ -19,7 +19,7 @@
 	</Target>
 
 	<ItemGroup>
-	  <PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.7" />
+	  <PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.9" />
 	</ItemGroup>
 
 </Project>
