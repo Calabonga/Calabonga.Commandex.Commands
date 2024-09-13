@@ -1,4 +1,4 @@
-using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Settings;
 using Calabonga.OperationResults;
@@ -20,7 +20,7 @@ public class FirstCommand : ParameterCommandexCommand<CreatedAtParameter>
     /// <summary>
     /// Author or copyright information
     /// </summary>
-    public override string CopyrightInfo => "Calabonga SOFT � 2024";
+    public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
     /// <summary>
     /// Display command name in command list 
@@ -35,7 +35,7 @@ public class FirstCommand : ParameterCommandexCommand<CreatedAtParameter>
     /// <summary>
     /// Current command version info for identification
     /// </summary>
-    public override string Version => "1.0.0-alpha.2";
+    public override string Version => "1.0.0-alpha.13";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {

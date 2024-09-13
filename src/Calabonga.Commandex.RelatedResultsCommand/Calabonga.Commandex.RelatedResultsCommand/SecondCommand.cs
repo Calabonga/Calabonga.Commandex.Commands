@@ -1,4 +1,4 @@
-using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Settings;
 using Calabonga.OperationResults;
@@ -18,13 +18,13 @@ public class SecondCommand : ParameterCommandexCommand<CreatedAtParameter>
         _logger = logger;
     }
 
-    public override string CopyrightInfo => "Calabonga SOFT � 2024";
+    public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
     public override string DisplayName => "Second Command in the chain";
 
     public override string Description => "This is brief description about second command";
 
-    public override string Version => "1.0.0-alpha.1";
+    public override string Version => "1.0.0-alpha.13";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {

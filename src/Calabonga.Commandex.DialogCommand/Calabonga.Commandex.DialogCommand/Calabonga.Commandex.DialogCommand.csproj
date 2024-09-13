@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.9" />
+		<PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.13" />
 	</ItemGroup>
 
 	<Target Name="CopyDLLs" AfterTargets="Build">

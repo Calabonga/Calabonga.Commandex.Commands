@@ -1,4 +1,4 @@
-using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Settings;
 using Calabonga.OperationResults;
@@ -15,13 +15,13 @@ public class ThirdCommand : ParameterCommandexCommand<CreatedAtParameter>
         _logger = logger;
     }
 
-    public override string CopyrightInfo => "Calabonga SOFT � 2024";
+    public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
     public override string DisplayName => "Third Command in the chain";
 
     public override string Description => "This is brief description about third command";
 
-    public override string Version => "1.0.0-alpha.12";
+    public override string Version => "1.0.0-alpha.13";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {

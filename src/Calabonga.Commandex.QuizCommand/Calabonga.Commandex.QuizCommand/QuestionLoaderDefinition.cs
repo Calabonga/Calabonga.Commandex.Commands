@@ -1,5 +1,6 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.QuizCommand.Core;
+using Calabonga.Commandex.QuizCommand.Core.ViewModels;
 using Calabonga.Commandex.QuizCommand.Core.Views;
 using Calabonga.Wpf.AppDefinitions;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,7 +16,7 @@ public class QuestionLoaderDefinition : AppDefinition
     public override void ConfigureServices(IServiceCollection services)
     {
         services.AddScoped<QuizDialogView>();
-        services.AddScoped<Core.ViewModels.QuizDialogResult>();
+        services.AddScoped<QuizDialogResult>();
         services.AddScoped<ICommandexCommand, QuestionLoadedCommand>();
     }
 }

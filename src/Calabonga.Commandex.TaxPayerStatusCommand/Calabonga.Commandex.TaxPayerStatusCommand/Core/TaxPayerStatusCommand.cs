@@ -15,7 +15,7 @@ public class TaxPayerStatusCommandexCommand : DialogCommandexCommand<TaxPayerDia
 
     public override string Description => "Публичный сервиса ФНС России «Проверка статуса налогоплательщика налога на профессиональный доход (самозанятого)»";
 
-    public override string Version => "v1.0.0-beta.9";
+    public override string Version => "v1.0.0-beta.10";
 
     public override bool IsPushToShellEnabled => true;
 

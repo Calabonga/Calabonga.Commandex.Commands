@@ -16,7 +16,7 @@ public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<P
 
     public override string Description => "Wizard with some steps which need to be validated.";
 
-    public override string Version => "1.0.0-beta.9";
+    public override string Version => "1.0.0-beta.10";
 
     public override bool IsPushToShellEnabled => true;
 
