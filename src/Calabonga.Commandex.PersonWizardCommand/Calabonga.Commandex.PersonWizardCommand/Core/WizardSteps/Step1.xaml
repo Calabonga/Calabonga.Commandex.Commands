@@ -6,7 +6,7 @@
              xmlns:wizardSteps="clr-namespace:Calabonga.Commandex.PersonWizardCommand.Core.WizardSteps"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance wizardSteps:Step1WizardViewModel}"
-             d:DesignHeight="450" d:DesignWidth="800">
+             >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>

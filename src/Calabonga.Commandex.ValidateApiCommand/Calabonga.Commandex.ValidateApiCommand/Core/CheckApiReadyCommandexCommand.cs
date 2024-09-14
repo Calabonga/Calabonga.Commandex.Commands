@@ -12,7 +12,7 @@ public class CheckApiReadyCommandexCommand : ResultCommandexCommand<bool>
 
     public override string Description => "Check API ready to accept requests.";
 
-    public override string Version => "1.0.0-beta.2";
+    public override string Version => "1.0.0-beta.15.0";
 
     protected override bool Result { get; set; }
 

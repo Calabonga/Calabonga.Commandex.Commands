@@ -16,7 +16,7 @@ public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
 
     public LoadExhibitCommandexCommand() => _client.BaseAddress = new Uri("https://api.calabonga.com");
 
-    public override string Version => "v1.0.0-beta.15";
+    public override string Version => "v1.0.0-beta.15.0";
 
     public override async Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {

@@ -15,7 +15,7 @@ public class HelloWorldCommandexCommand : EmptyCommandexCommand
 
     public override string Description => "Simplest command type for Commandex";
 
-    public override string Version => "1.0.0-alpha.3";
+    public override string Version => "1.0.0-alpha.15.0";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {

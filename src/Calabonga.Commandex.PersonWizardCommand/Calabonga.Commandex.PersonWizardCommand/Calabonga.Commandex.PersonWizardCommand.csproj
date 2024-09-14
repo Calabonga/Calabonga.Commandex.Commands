@@ -19,19 +19,7 @@
 	</Target>
 
 	<ItemGroup>
-		<PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.13" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Core\WizardSteps\Step1.xaml.cs">
-	    <SubType>Code</SubType>
-	  </Compile>
-	  <Compile Update="Core\WizardSteps\Step2.xaml.cs">
-	    <SubType>Code</SubType>
-	  </Compile>
-	  <Compile Update="Core\WizardSteps\Step3.xaml.cs">
-	    <SubType>Code</SubType>
-	  </Compile>
+	  <PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.15" />
 	</ItemGroup>
 
 </Project>
