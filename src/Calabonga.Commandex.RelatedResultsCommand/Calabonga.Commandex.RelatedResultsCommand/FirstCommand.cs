@@ -35,7 +35,7 @@ public class FirstCommand : ParameterCommandexCommand<CreatedAtParameter>
     /// <summary>
     /// Current command version info for identification
     /// </summary>
-    public override string Version => "1.0.0-alpha.13";
+    public override string Version => "1.0.0-alpha.15.0";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {
@@ -45,4 +45,6 @@ public class FirstCommand : ParameterCommandexCommand<CreatedAtParameter>
 
         return Task.FromResult<OperationEmpty<ExecuteCommandexCommandException>>(Operation.Result());
     }
+
+    public override bool IsPushToShellEnabled => true;
 }

@@ -12,7 +12,7 @@ namespace Calabonga.Commandex.ValidateApiCommand.Core
 
         public override string Description => "Validate document exists on server";
 
-        public override string Version => "1.0.0-beta.1";
+        public override string Version => "1.0.0-beta.15.0";
 
         protected override ValidateResult? Result { get; set; }
 

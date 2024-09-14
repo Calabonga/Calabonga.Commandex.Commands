@@ -38,5 +38,5 @@ public class WelcomeEmptyCommandexCommand : EmptyCommandexCommand
 
     public override string Description => "Это демонстрация по реализации команды для Commandex без возврата данных";
 
-    public override string Version => "1.0.0-beta.11";
+    public override string Version => "1.0.0-beta.15.0";
 }

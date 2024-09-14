@@ -21,7 +21,7 @@ public class ThirdCommand : ParameterCommandexCommand<CreatedAtParameter>
 
     public override string Description => "This is brief description about third command";
 
-    public override string Version => "1.0.0-alpha.13";
+    public override string Version => "1.0.0-alpha.15.0";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {

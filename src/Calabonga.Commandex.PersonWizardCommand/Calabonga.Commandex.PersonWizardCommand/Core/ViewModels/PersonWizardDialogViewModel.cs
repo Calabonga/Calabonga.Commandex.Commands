@@ -3,6 +3,7 @@ using Calabonga.Commandex.Engine.Wizards;
 using Calabonga.Commandex.PersonWizardCommand.Core.Entities;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
+using System.Windows;
 
 namespace Calabonga.Commandex.PersonWizardCommand.Core.ViewModels;
 
@@ -33,4 +34,10 @@ public class PersonWizardDialogViewModel : WizardDialogViewModel<PersonViewModel
 
         _logger.LogInformation(JsonSerializer.Serialize(payload, JsonSerializerOptionsExt.Cyrillic));
     }
+
+    public override ResizeMode ResizeMode => ResizeMode.CanResize;
+
+    public override WindowStyle WindowStyle => WindowStyle.SingleBorderWindow;
+
+    public override SizeToContent SizeToContent => SizeToContent.WidthAndHeight;
 }
