@@ -1,21 +1,18 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Extensions;
-using Calabonga.Commandex.Welcome.Core;
-using Calabonga.Commandex.Welcome.Core.Entities;
-using Calabonga.Commandex.Welcome.Core.Settings;
-using Calabonga.Commandex.Welcome.Core.ViewModels;
-using Calabonga.Commandex.Welcome.Core.WizardSteps;
+using Calabonga.Commandex.PersonWizardCommand.Core;
+using Calabonga.Commandex.PersonWizardCommand.Core.Entities;
+using Calabonga.Commandex.PersonWizardCommand.Core.ViewModels;
+using Calabonga.Commandex.PersonWizardCommand.Core.WizardSteps;
 using Calabonga.Wpf.AppDefinitions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Calabonga.Commandex.Welcome;
+namespace Calabonga.Commandex.PersonWizardCommand;
 
-public class WelcomeAppDefinition : AppDefinition
+public class WizardCommandDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)
     {
-        services.AddScoped<ICommandexCommand, WelcomeEmptyCommandexCommand>();
-        services.AddScoped<ICommandexCommand, WelcomeResultCommandexCommand>();
         services.AddScoped<ICommandexCommand, PersonWizardDialogCommandexCommand>();
 
         services.AddWizard<PersonWizardDialogViewModel>();
@@ -24,7 +21,5 @@ public class WelcomeAppDefinition : AppDefinition
         services.AddWizardStep<Step2, Step2WizardViewModel, PersonViewModel>("Шаг №2");
         services.AddWizardStep<Step3, Step3WizardViewModel, PersonViewModel>("Шаг №3");
         services.AddWizardStep<StepFinal, StepFinalViewModel, PersonViewModel>("Итог");
-
-        services.AddKeyedTransient<CurrentAppSettings>(nameof(WelcomeAppDefinition));
     }
 }

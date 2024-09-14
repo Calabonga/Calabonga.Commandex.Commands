@@ -1,8 +1,8 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Dialogs;
-using Calabonga.Commandex.Welcome.Core.ViewModels;
+using Calabonga.Commandex.PersonWizardCommand.Core.ViewModels;
 
-namespace Calabonga.Commandex.Welcome.Core;
+namespace Calabonga.Commandex.PersonWizardCommand.Core;
 
 public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<PersonWizardDialogViewModel>
 {

@@ -1,10 +1,10 @@
 ﻿using Calabonga.Commandex.Engine.Extensions;
 using Calabonga.Commandex.Engine.Wizards;
-using Calabonga.Commandex.Welcome.Core.Entities;
+using Calabonga.Commandex.PersonWizardCommand.Core.Entities;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
 
-namespace Calabonga.Commandex.Welcome.Core.ViewModels;
+namespace Calabonga.Commandex.PersonWizardCommand.Core.ViewModels;
 
 /// <summary>
 /// // Calabonga: Summary required (PersonWizardDialogViewModel 2024-08-13 11:45)

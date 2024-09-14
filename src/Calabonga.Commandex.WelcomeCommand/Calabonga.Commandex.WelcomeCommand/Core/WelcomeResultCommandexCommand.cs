@@ -12,7 +12,7 @@ namespace Calabonga.Commandex.Welcome.Core;
 public class WelcomeResultCommandexCommand : ResultCommandexCommand<string>
 {
     public WelcomeResultCommandexCommand(
-        [FromKeyedServices(nameof(WelcomeAppDefinition))]
+        [FromKeyedServices(nameof(WelcomeCommandDefinition))]
         CurrentAppSettings appSettings)
         => AppSettings = appSettings;
 
@@ -33,7 +33,7 @@ public class WelcomeResultCommandexCommand : ResultCommandexCommand<string>
 
     public override string Description => "Это демонстрация по реализации команды для Commandex с результатом";
 
-    public override string Version => "1.0.0-beta.10";
+    public override string Version => "1.0.0-beta.11";
 
     protected override string? Result { get; set; }
 }

@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<Target Name="CopyDLLs" AfterTargets="Build">
+		<Message Text="Executing Copy Command Task" Importance="High" />
+
+		<PropertyGroup>
+			<PublishedCommandsDir>..\..\..\..\Calabonga.Commandex.Shell\PublishedCommands</PublishedCommandsDir>
+		</PropertyGroup>
+
+		<Copy SourceFiles="$(TargetDir)$(ProjectName).dll;$(TargetDir)$(ProjectName).pdb" DestinationFolder="$(PublishedCommandsDir)" />
+		<Message Text="Command $(ProjectName) successfully copied" Importance="High" />
+	</Target>
+
+	<ItemGroup>
+		<PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.13" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Core\WizardSteps\Step1.xaml.cs">
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="Core\WizardSteps\Step2.xaml.cs">
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="Core\WizardSteps\Step3.xaml.cs">
+	    <SubType>Code</SubType>
+	  </Compile>
+	</ItemGroup>
+
+</Project>

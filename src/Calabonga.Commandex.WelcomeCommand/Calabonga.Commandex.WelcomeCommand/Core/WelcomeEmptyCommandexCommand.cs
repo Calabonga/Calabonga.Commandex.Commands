@@ -15,7 +15,7 @@ public class WelcomeEmptyCommandexCommand : EmptyCommandexCommand
     private readonly ILogger<WelcomeEmptyCommandexCommand> _logger;
 
     public WelcomeEmptyCommandexCommand(
-        [FromKeyedServices(nameof(WelcomeAppDefinition))] CurrentAppSettings appSettings,
+        [FromKeyedServices(nameof(WelcomeCommandDefinition))] CurrentAppSettings appSettings,
         ILogger<WelcomeEmptyCommandexCommand> logger)
     {
         _logger = logger;
@@ -38,5 +38,5 @@ public class WelcomeEmptyCommandexCommand : EmptyCommandexCommand
 
     public override string Description => "Это демонстрация по реализации команды для Commandex без возврата данных";
 
-    public override string Version => "1.0.0-beta.10";
+    public override string Version => "1.0.0-beta.11";
 }

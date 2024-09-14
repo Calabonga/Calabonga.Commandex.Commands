@@ -1,9 +1,9 @@
 ﻿using Calabonga.Commandex.Engine.Wizards;
-using Calabonga.Commandex.Welcome.Core.Entities;
+using Calabonga.Commandex.PersonWizardCommand.Core.Entities;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Calabonga.Commandex.Welcome.Core.WizardSteps;
+namespace Calabonga.Commandex.PersonWizardCommand.Core.WizardSteps;
 
 public partial class Step1WizardViewModel : WizardStepValidationViewModel<PersonViewModel>
 {

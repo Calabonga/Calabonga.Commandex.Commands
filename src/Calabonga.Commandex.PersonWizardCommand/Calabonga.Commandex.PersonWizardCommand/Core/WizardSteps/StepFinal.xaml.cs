@@ -1,7 +1,7 @@
 ﻿using Calabonga.Commandex.Engine.Wizards;
 using System.Windows.Controls;
 
-namespace Calabonga.Commandex.Welcome.Core.WizardSteps
+namespace Calabonga.Commandex.PersonWizardCommand.Core.WizardSteps
 {
     /// <summary>
     /// Interaction logic for StepFinal.xaml

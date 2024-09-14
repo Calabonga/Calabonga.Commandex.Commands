@@ -1,4 +1,4 @@
-﻿namespace Calabonga.Commandex.Welcome.Core.Entities;
+﻿namespace Calabonga.Commandex.PersonWizardCommand.Core.Entities;
 
 /// <summary>
 /// Person Wizard Payload ViewModel
