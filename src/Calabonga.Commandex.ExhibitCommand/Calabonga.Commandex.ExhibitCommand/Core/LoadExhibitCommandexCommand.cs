@@ -12,10 +12,6 @@ namespace Calabonga.Commandex.ExhibitCommand.Core;
 /// </summary>
 public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
 {
-    private readonly HttpClient _client = new();
-
-    public LoadExhibitCommandexCommand() => _client.BaseAddress = new Uri("https://api.calabonga.com");
-
     public override string Version => "v1.0.0-beta.15.0";
 
     public override async Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
@@ -38,14 +34,11 @@ public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
 
     private async Task<Exhibit?> ExecuteAsync()
     {
-        var response = await _client.GetAsync("/api3/v3/random");
+        var client = new HttpClient();
+        client.BaseAddress = new Uri("https://api.calabonga.com");
+        var response = await client.GetAsync("/api3/v3/random");
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
         return JsonSerializer.Deserialize<Exhibit>(content, JsonSerializerOptionsExt.Cyrillic);
     }
-
-    /// <summary>
-    /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-    /// </summary>
-    public override void Dispose() => _client.Dispose();
 }
