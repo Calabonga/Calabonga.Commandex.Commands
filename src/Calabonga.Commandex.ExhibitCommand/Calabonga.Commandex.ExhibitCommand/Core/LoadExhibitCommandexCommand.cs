@@ -24,7 +24,7 @@ public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
         return Operation.Result();
     }
 
-    public override string[] Tags => ["httpclient", "calabonga.com"];
+    public override string[]? Tags => [];
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
