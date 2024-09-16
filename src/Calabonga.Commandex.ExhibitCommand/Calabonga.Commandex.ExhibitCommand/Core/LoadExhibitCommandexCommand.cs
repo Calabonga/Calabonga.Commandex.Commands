@@ -1,4 +1,5 @@
-﻿using Calabonga.Commandex.Engine.Base.Commands;
+﻿
+using Calabonga.Commandex.Engine.Base.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Extensions;
 using Calabonga.Commandex.ExhibitCommand.Core.Entities;
@@ -19,8 +20,6 @@ public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
         Result = await ExecuteAsync();
         return Operation.Result();
     }
-
-    public override string[]? Tags => [];
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
