@@ -18,9 +18,4 @@
 		<Message Text="Command $(ProjectName) successfully copied" Importance="High" />
 	</Target>
 
-
-	<ItemGroup>
-	  <ProjectReference Include="..\..\..\..\Calabonga.Commandex.Engine\src\Calabonga.Commandex.Engine\Calabonga.Commandex.Engine.csproj" />
-	</ItemGroup>
-
 </Project>
