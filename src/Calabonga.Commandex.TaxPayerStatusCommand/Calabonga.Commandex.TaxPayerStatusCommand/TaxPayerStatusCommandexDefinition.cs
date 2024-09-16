@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Base;
 using Calabonga.Commandex.Engine.NugetDependencies;
 using Calabonga.Commandex.TaxPayerStatusCommand.Core;
 using Calabonga.Commandex.TaxPayerStatusCommand.Core.Views;

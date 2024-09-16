@@ -1,7 +1,7 @@
 ﻿using Calabonga.Commandex.Engine.Base;
 using Calabonga.Commandex.Engine.Settings;
 
-namespace Calabonga.Commandex.Welcome.Core.Settings;
+namespace Calabonga.Commandex.WelcomeCommand.Core.Settings;
 
 public class CurrentAppSettings : SettingsBase
 {

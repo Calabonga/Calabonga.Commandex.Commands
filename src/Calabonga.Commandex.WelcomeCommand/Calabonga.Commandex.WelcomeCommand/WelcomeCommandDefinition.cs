@@ -1,10 +1,10 @@
-﻿using Calabonga.Commandex.Engine.Commands;
-using Calabonga.Commandex.Welcome.Core;
-using Calabonga.Commandex.Welcome.Core.Settings;
+﻿using Calabonga.Commandex.Engine.Base;
+using Calabonga.Commandex.WelcomeCommand.Core;
+using Calabonga.Commandex.WelcomeCommand.Core.Settings;
 using Calabonga.Wpf.AppDefinitions;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Calabonga.Commandex.Welcome;
+namespace Calabonga.Commandex.WelcomeCommand;
 
 public class WelcomeCommandDefinition : AppDefinition
 {

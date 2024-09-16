@@ -18,4 +18,8 @@
 		<Message Text="Command $(ProjectName) successfully copied" Importance="High" />
 	</Target>
 
+	<ItemGroup>
+	  <PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.16" />
+	</ItemGroup>
+
 </Project>

@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.15" />
+		<PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.16" />
 		<PackageReference Include="Calabonga.TokenGeneratorCore" Version="1.0.0" />
 	</ItemGroup>
 

@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Base.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.OperationResults;
 
@@ -10,9 +10,9 @@ namespace Calabonga.Commandex.ValidateApiCommand.Core
 
         public override string DisplayName => "Validate Document";
 
-        public override string Description => "Validate document exists on server";
+        public override string Description => "Это имитация валидации некоторого значения с возвратом более сложного объекта как результат для демонстрации работы команды Commandex Framework.";
 
-        public override string Version => "1.0.0-beta.15.0";
+        public override string Version => "1.0.0-beta.16.0";
 
         protected override ValidateResult? Result { get; set; }
 

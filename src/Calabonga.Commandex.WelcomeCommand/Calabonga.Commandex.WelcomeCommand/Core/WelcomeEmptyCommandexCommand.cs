@@ -1,11 +1,11 @@
-﻿using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Base.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
-using Calabonga.Commandex.Welcome.Core.Settings;
+using Calabonga.Commandex.WelcomeCommand.Core.Settings;
 using Calabonga.OperationResults;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Calabonga.Commandex.Welcome.Core;
+namespace Calabonga.Commandex.WelcomeCommand.Core;
 
 /// <summary>
 /// // Calabonga: Summary required (WelcomeEmptyCommandexCommand 2024-08-11 11:20)
@@ -36,7 +36,7 @@ public class WelcomeEmptyCommandexCommand : EmptyCommandexCommand
 
     public override string DisplayName => "Добро пожаловать в модульность (Empty)";
 
-    public override string Description => "Это демонстрация по реализации команды для Commandex без возврата данных";
+    public override string Description => "Это демонстрация реализации команды для Commandex без возврата данных";
 
-    public override string Version => "1.0.0-beta.15.0";
+    public override string Version => "1.0.0-beta.16.0";
 }

@@ -1,5 +1,4 @@
-﻿
-using Calabonga.Commandex.Engine.Base.Commands;
+﻿using Calabonga.Commandex.Engine.Base.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Extensions;
 using Calabonga.Commandex.ExhibitCommand.Core.Entities;
@@ -13,7 +12,7 @@ namespace Calabonga.Commandex.ExhibitCommand.Core;
 /// </summary>
 public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
 {
-    public override string Version => "v1.0.0-beta.15.0";
+    public override string Version => "v1.0.0-beta.16.0";
 
     public override async Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {
@@ -27,7 +26,7 @@ public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
 
     public override string DisplayName => "Получение экспоната из Музея Юмора";
 
-    public override string Description => "Запрос на удаленный API с целью получить экспонат одного из видов: анекдот, история, хокку, фразы и изречение, стишок и другие. Загруженные данные не отображаются.";
+    public override string Description => "Запрос (HTTP) на удаленный API с целью получить экспонат одного из видов: анекдот, история, хокку, фразы и изречение, стишок и другие. Загруженные данные не отображаются, а отдаются на Shell.";
 
     public override bool IsPushToShellEnabled => true;
 

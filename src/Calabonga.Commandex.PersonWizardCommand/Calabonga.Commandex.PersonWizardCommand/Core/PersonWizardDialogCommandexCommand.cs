@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Base.Commands;
 using Calabonga.Commandex.Engine.Dialogs;
 using Calabonga.Commandex.PersonWizardCommand.Core.ViewModels;
 
@@ -14,9 +14,9 @@ public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<P
 
     public override string DisplayName => "Person Wizard";
 
-    public override string Description => "Wizard with some steps which need to be validated.";
+    public override string Description => "Получение данных Ф.И.О от пользователя с разбиением на страницы (шаги wizard) с валидацией ввода.";
 
-    public override string Version => "1.0.0-beta.15.0";
+    public override string Version => "1.0.0-beta.16.0";
 
     protected override PersonWizardDialogViewModel SetResult(PersonWizardDialogViewModel result) => result;
 }

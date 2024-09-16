@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Base.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Settings;
 using Calabonga.OperationResults;
@@ -9,7 +9,7 @@ namespace Calabonga.Commandex.RelatedResultsCommand;
 /// <summary>
 /// 
 /// </summary>
-public class SecondCommand : ParameterCommandexCommand<CreatedAtParameter>
+internal class SecondCommand : ParameterCommandexCommand<CreatedAtParameter>
 {
     private readonly ILogger<SecondCommand> _logger;
 
@@ -24,7 +24,7 @@ public class SecondCommand : ParameterCommandexCommand<CreatedAtParameter>
 
     public override string Description => "This is brief description about second command";
 
-    public override string Version => "1.0.0-alpha.15.0";
+    public override string Version => "1.0.0-alpha.16.0";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {

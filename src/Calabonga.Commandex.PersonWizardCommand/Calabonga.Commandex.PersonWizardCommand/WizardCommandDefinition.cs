@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Base;
 using Calabonga.Commandex.Engine.Extensions;
 using Calabonga.Commandex.PersonWizardCommand.Core;
 using Calabonga.Commandex.PersonWizardCommand.Core.Entities;
