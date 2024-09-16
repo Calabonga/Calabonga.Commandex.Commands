@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Base.Commands;
 using Calabonga.Commandex.Engine.Dialogs;
 using Calabonga.Commandex.QuizCommand.Core.Views;
 
@@ -7,7 +7,7 @@ namespace Calabonga.Commandex.QuizCommand.Core;
 /// <summary>
 /// // Calabonga: Summary required (QuestionLoadedCommand 2024-08-16 07:20)
 /// </summary>
-public class QuestionLoadedCommand : DialogCommandexCommand<QuizDialogView, ViewModels.QuizDialogResult>
+public class QuestionLoadedCommand : DialogCommandexCommand<QuizDialogView, ViewModels.QuizViewModel>
 {
     public QuestionLoadedCommand(IDialogService dialogService) : base(dialogService) { }
 
