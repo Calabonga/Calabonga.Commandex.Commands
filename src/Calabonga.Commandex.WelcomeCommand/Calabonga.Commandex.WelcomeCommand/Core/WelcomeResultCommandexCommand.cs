@@ -1,10 +1,10 @@
-﻿using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Base.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
-using Calabonga.Commandex.Welcome.Core.Settings;
+using Calabonga.Commandex.WelcomeCommand.Core.Settings;
 using Calabonga.OperationResults;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Calabonga.Commandex.Welcome.Core;
+namespace Calabonga.Commandex.WelcomeCommand.Core;
 
 /// <summary>
 /// // Calabonga: Summary required (WelcomeCommandexCommand 2024-08-11 10:49)
@@ -31,9 +31,9 @@ public class WelcomeResultCommandexCommand : ResultCommandexCommand<string>
 
     public override string DisplayName => "Добро пожаловать в модульность (Result)";
 
-    public override string Description => "Это демонстрация по реализации команды для Commandex с результатом";
+    public override string Description => "Это демонстрация реализации команды для Commandex с результатом";
 
-    public override string Version => "1.0.0-beta.15.0";
+    public override string Version => "1.0.0-beta.16.0";
 
     protected override string? Result { get; set; }
 }

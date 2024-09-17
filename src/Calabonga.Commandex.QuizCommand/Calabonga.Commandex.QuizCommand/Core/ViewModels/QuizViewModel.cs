@@ -9,11 +9,11 @@ using System.Windows;
 
 namespace Calabonga.Commandex.QuizCommand.Core.ViewModels;
 
-public partial class QuizDialogResult : DefaultDialogResult
+public partial class QuizViewModel : DefaultViewModel
 {
     private readonly HttpClient _client = new();
 
-    public QuizDialogResult()
+    public QuizViewModel()
     {
         _client.BaseAddress = new Uri("https://quiz.calabonga.net/");
         Title = "Загрузчик вопросов";

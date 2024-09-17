@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Base.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.OperationResults;
 
@@ -10,9 +10,9 @@ public class CheckApiReadyCommandexCommand : ResultCommandexCommand<bool>
 
     public override string DisplayName => "Check API";
 
-    public override string Description => "Check API ready to accept requests.";
+    public override string Description => "Это имитация запроса на некий выдуманный API сервис для демонстрации работы команды Commandex Framework.";
 
-    public override string Version => "1.0.0-beta.15.0";
+    public override string Version => "1.0.0-beta.16.0";
 
     protected override bool Result { get; set; }
 

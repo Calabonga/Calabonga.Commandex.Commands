@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Commands;
+﻿using Calabonga.Commandex.Engine.Base.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Settings;
 using Calabonga.OperationResults;
@@ -35,7 +35,7 @@ public class FirstCommand : ParameterCommandexCommand<CreatedAtParameter>
     /// <summary>
     /// Current command version info for identification
     /// </summary>
-    public override string Version => "1.0.0-alpha.15.0";
+    public override string Version => "1.0.0-alpha.16.0";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {

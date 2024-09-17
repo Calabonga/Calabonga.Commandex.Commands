@@ -1,6 +1,7 @@
-﻿using Calabonga.Commandex.DialogCommand.Core.ViewModels;
+﻿using Calabonga.Commandex.DialogCommand.Core;
+using Calabonga.Commandex.DialogCommand.Core.ViewModels;
 using Calabonga.Commandex.DialogCommand.Core.Views;
-using Calabonga.Commandex.Engine.Commands;
+using Calabonga.Commandex.Engine.Base;
 using Calabonga.Wpf.AppDefinitions;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,7 +11,7 @@ public class DialogCommandDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)
     {
-        services.AddScoped<ICommandexCommand, Core.DialogCommand>();
+        services.AddScoped<ICommandexCommand, DialogCommandexCommand>();
         services.AddScoped<DemoDialogResult>();
         services.AddScoped<DemoDialogView>();
     }
