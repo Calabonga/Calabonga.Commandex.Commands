@@ -8,14 +8,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.17" />
+		<PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.17-beta.1" />
 	</ItemGroup>
 
 	<Target Name="CopyDLLs" AfterTargets="Build">
 		<Message Text="Executing Copy Command Task" Importance="High" />
 
 		<PropertyGroup>
-			<PublishedCommandsDir>..\..\..\..\Calabonga.Commandex.Shell\PublishedCommands</PublishedCommandsDir>
+			<PublishedCommandsDir>C:\Projects\Calabonga.Commandex\Calabonga.Commandex.Shell\PublishedCommands</PublishedCommandsDir>
 		</PropertyGroup>
 
 		<Copy SourceFiles="$(TargetDir)$(ProjectName).dll;$(TargetDir)$(ProjectName).pdb" DestinationFolder="$(PublishedCommandsDir)" />

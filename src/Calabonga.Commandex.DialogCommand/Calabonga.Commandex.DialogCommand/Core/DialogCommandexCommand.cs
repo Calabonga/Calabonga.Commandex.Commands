@@ -17,7 +17,7 @@ public class DialogCommandexCommand : DialogCommandexCommand<DemoDialogView, Dem
 
     public override string Description => "Демонстрация открытия команды в диалоговом окне Commandex Framework.";
 
-    public override string Version => "1.0.0-beta.16.0"; //semver.org
+    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
 
     public override bool IsPushToShellEnabled => true;
 }

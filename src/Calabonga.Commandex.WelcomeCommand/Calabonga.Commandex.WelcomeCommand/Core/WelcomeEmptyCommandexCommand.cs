@@ -38,5 +38,5 @@ public class WelcomeEmptyCommandexCommand : EmptyCommandexCommand
 
     public override string Description => "Это демонстрация реализации команды для Commandex без возврата данных";
 
-    public override string Version => "1.0.0-beta.16.0";
+    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
 }

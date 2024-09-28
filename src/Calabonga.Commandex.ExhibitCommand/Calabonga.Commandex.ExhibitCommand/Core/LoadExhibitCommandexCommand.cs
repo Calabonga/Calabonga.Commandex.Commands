@@ -12,8 +12,6 @@ namespace Calabonga.Commandex.ExhibitCommand.Core;
 /// </summary>
 public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
 {
-    public override string Version => "v1.0.0-beta.16.0";
-
     public override async Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {
         Result = await ExecuteAsync();
@@ -21,6 +19,8 @@ public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
     }
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
+
+    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
 
     protected override Exhibit? Result { get; set; }
 
