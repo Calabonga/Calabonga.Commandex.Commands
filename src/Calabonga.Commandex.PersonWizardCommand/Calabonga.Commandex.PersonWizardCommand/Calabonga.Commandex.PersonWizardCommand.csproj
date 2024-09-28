@@ -19,7 +19,7 @@
 	</Target>
 
 	<ItemGroup>
-	  <PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.16" />
+	  <PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.17" />
 	</ItemGroup>
 
 </Project>

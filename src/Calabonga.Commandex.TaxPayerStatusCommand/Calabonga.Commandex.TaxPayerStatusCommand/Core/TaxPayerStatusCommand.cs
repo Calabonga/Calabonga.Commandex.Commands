@@ -15,7 +15,7 @@ public class TaxPayerStatusCommandexCommand : DialogCommandexCommand<TaxPayerDia
 
     public override string Description => "Публичный сервиса ФНС России «Проверка статуса налогоплательщика налога на профессиональный доход (самозанятого)» (запрос на сайте nalog.ru)";
 
-    public override string Version => "v1.0.0-beta.16.0";
+    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
 
     public override bool IsPushToShellEnabled => true;
 

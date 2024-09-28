@@ -13,9 +13,7 @@ public class FirstCommand : ParameterCommandexCommand<CreatedAtParameter>
     public FirstCommand(
         ILogger<FirstCommand> logger,
         IAppSettings appSettings) : base(appSettings)
-    {
-        _logger = logger;
-    }
+        => _logger = logger;
 
     /// <summary>
     /// Author or copyright information
@@ -35,13 +33,15 @@ public class FirstCommand : ParameterCommandexCommand<CreatedAtParameter>
     /// <summary>
     /// Current command version info for identification
     /// </summary>
-    public override string Version => "1.0.0-alpha.16.0";
+    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {
         _logger.LogDebug("Executing command in {Name}", GetType().Name);
 
-        Parameter = new CreatedAtParameter() { CreatedAt = DateTime.Now };
+        var parameter = new CreatedAtParameter() { CreatedAt = DateTime.Now };
+
+        WriteParameter(parameter);
 
         return Task.FromResult<OperationEmpty<ExecuteCommandexCommandException>>(Operation.Result());
     }

@@ -10,10 +10,7 @@ public class ThirdCommand : ParameterCommandexCommand<CreatedAtParameter>
 {
     private readonly ILogger<ThirdCommand> _logger;
 
-    public ThirdCommand(ILogger<ThirdCommand> logger, IAppSettings appSettings) : base(appSettings)
-    {
-        _logger = logger;
-    }
+    public ThirdCommand(ILogger<ThirdCommand> logger, IAppSettings appSettings) : base(appSettings) => _logger = logger;
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
@@ -21,13 +18,17 @@ public class ThirdCommand : ParameterCommandexCommand<CreatedAtParameter>
 
     public override string Description => "This is brief description about third command";
 
-    public override string Version => "1.0.0-alpha.16.0";
+    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {
-        _logger.LogInformation("Date {Date} with {Data}", Parameter?.CreatedAt, Parameter?.RandomData);
+        var parameter = ReadParameter();
+
+        _logger.LogInformation("Date {Date} with {Data}", parameter?.CreatedAt, parameter?.RandomData);
 
         ClearParameter();
+
+        _logger.LogInformation("Parameter data removed");
 
         return Task.FromResult<OperationEmpty<ExecuteCommandexCommandException>>(Operation.Result());
     }

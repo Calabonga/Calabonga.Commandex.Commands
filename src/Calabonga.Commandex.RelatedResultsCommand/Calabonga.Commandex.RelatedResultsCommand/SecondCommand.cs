@@ -13,10 +13,7 @@ internal class SecondCommand : ParameterCommandexCommand<CreatedAtParameter>
 {
     private readonly ILogger<SecondCommand> _logger;
 
-    public SecondCommand(ILogger<SecondCommand> logger, IAppSettings appSettings) : base(appSettings)
-    {
-        _logger = logger;
-    }
+    public SecondCommand(ILogger<SecondCommand> logger, IAppSettings appSettings) : base(appSettings) => _logger = logger;
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
@@ -24,23 +21,24 @@ internal class SecondCommand : ParameterCommandexCommand<CreatedAtParameter>
 
     public override string Description => "This is brief description about second command";
 
-    public override string Version => "1.0.0-alpha.16.0";
+    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {
         _logger.LogDebug("Executing command in {Name}", GetType().Name);
 
-        var result = Parameter?.RandomData;
+        var parameter = ReadParameter();
+        var result = parameter?.RandomData;
         if (!string.IsNullOrEmpty(result))
         {
             return Task.FromResult<OperationEmpty<ExecuteCommandexCommandException>>(Operation.Result());
         }
 
-        if (Parameter != null)
+        if (parameter != null)
         {
-            Parameter.RandomData = "RND";
+            parameter.RandomData = "RND";
             _logger.LogDebug("Save Parameter in command {Name}", GetType().Name);
-            SaveParameter();
+            WriteParameter(parameter);
         }
 
         return Task.FromResult<OperationEmpty<ExecuteCommandexCommandException>>(Operation.Result());

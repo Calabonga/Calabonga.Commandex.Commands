@@ -16,7 +16,7 @@ public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<P
 
     public override string Description => "Получение данных Ф.И.О от пользователя с разбиением на страницы (шаги wizard) с валидацией ввода.";
 
-    public override string Version => "1.0.0-beta.16.0";
+    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
 
     protected override PersonWizardDialogViewModel SetResult(PersonWizardDialogViewModel result) => result;
 }

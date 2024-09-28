@@ -4,7 +4,7 @@
 namespace Calabonga.Commandex.RelatedResultsCommand;
 
 /// <summary>
-/// // Calabonga: Summary required (CreatedAtParameter 2024-08-20 08:57)
+/// Simple parameter for demo
 /// </summary>
 public class CreatedAtParameter : CommandexParameter
 {

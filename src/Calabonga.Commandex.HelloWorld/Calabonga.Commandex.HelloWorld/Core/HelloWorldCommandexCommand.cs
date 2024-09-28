@@ -15,7 +15,7 @@ public class HelloWorldCommandexCommand : EmptyCommandexCommand
 
     public override string Description => "Самый простой тип команды, которая есть в Commandex Framework. Команда ничего не возвращает полезного, только ошибку если она случиться.";
 
-    public override string Version => "1.0.0-alpha.16.0";
+    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {
