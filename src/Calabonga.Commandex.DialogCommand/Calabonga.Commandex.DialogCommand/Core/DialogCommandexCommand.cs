@@ -1,6 +1,6 @@
 ﻿using Calabonga.Commandex.DialogCommand.Core.ViewModels;
 using Calabonga.Commandex.DialogCommand.Core.Views;
-using Calabonga.Commandex.Engine.Base.Commands;
+using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Dialogs;
 
 namespace Calabonga.Commandex.DialogCommand.Core;
@@ -17,7 +17,10 @@ public class DialogCommandexCommand : DialogCommandexCommand<DemoDialogView, Dem
 
     public override string Description => "Демонстрация открытия команды в диалоговом окне Commandex Framework.";
 
-    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
+    /// <summary>
+    /// semver.org principle used
+    /// </summary>
+    public override string Version => "1.0.0";
 
     public override bool IsPushToShellEnabled => true;
 }

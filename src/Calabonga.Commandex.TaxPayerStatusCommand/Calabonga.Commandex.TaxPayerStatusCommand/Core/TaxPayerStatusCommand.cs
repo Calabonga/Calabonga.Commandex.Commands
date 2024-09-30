@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Base.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Dialogs;
 using Calabonga.Commandex.TaxPayerStatusCommand.Core.ViewModels;
 using Calabonga.Commandex.TaxPayerStatusCommand.Core.Views;
@@ -15,7 +15,10 @@ public class TaxPayerStatusCommandexCommand : DialogCommandexCommand<TaxPayerDia
 
     public override string Description => "Публичный сервиса ФНС России «Проверка статуса налогоплательщика налога на профессиональный доход (самозанятого)» (запрос на сайте nalog.ru)";
 
-    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
+    /// <summary>
+    /// semver.org principle used
+    /// </summary>
+    public override string Version => "1.0.0";
 
     public override bool IsPushToShellEnabled => true;
 

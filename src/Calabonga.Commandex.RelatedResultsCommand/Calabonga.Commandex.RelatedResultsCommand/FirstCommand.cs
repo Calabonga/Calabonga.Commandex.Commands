@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Base.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Settings;
 using Calabonga.OperationResults;
@@ -31,9 +31,9 @@ public class FirstCommand : ParameterCommandexCommand<CreatedAtParameter>
     public override string Description => "This is brief description about first command";
 
     /// <summary>
-    /// Current command version info for identification
+    /// semver.org principle used
     /// </summary>
-    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
+    public override string Version => "1.0.0";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {

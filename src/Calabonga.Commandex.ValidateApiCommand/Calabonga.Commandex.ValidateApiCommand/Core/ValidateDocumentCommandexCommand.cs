@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Base.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.OperationResults;
 
@@ -12,7 +12,10 @@ namespace Calabonga.Commandex.ValidateApiCommand.Core
 
         public override string Description => "Это имитация валидации некоторого значения с возвратом более сложного объекта как результат для демонстрации работы команды Commandex Framework.";
 
-        public override string Version => "1.0.0-rc.17.9.28"; //semver.org
+        /// <summary>
+        /// semver.org principle used
+        /// </summary>
+        public override string Version => "1.0.0";
 
         protected override ValidateResult? Result { get; set; }
 

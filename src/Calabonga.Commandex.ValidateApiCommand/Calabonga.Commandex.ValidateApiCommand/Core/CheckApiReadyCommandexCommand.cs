@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Base.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.OperationResults;
 
@@ -12,7 +12,10 @@ public class CheckApiReadyCommandexCommand : ResultCommandexCommand<bool>
 
     public override string Description => "Это имитация запроса на некий выдуманный API сервис для демонстрации работы команды Commandex Framework.";
 
-    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
+    /// <summary>
+    /// semver.org principle used
+    /// </summary>
+    public override string Version => "1.0.0";
 
     protected override bool Result { get; set; }
 

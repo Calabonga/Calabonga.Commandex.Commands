@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Base.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Dialogs;
 using Calabonga.Commandex.QuizCommand.Core.Views;
 
@@ -17,5 +17,8 @@ public class QuestionLoadedCommand : DialogCommandexCommand<QuizDialogView, View
 
     public override string Description => "Загрузчик вопросов без возможности ответить со стороннего сервиса, но с возможностью показать загруженные данные.";
 
-    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
+    /// <summary>
+    /// semver.org principle used
+    /// </summary>
+    public override string Version => "1.0.0";
 }

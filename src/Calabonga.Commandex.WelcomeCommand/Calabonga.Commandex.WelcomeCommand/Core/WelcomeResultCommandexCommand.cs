@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Base.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.WelcomeCommand.Core.Settings;
 using Calabonga.OperationResults;
@@ -17,6 +17,11 @@ public class WelcomeResultCommandexCommand : ResultCommandexCommand<string>
         => AppSettings = appSettings;
 
 
+    /// <summary>
+    /// semver.org principle used
+    /// </summary>
+    public override string Version => "1.0.0";
+
     public CurrentAppSettings AppSettings { get; }
 
     public override bool IsPushToShellEnabled => true;
@@ -32,8 +37,6 @@ public class WelcomeResultCommandexCommand : ResultCommandexCommand<string>
     public override string DisplayName => "Добро пожаловать в модульность (Result)";
 
     public override string Description => "Это демонстрация реализации команды для Commandex с результатом";
-
-    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
 
     protected override string? Result { get; set; }
 }

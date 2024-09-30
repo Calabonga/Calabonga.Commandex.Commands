@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Base.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Extensions;
 using Calabonga.Commandex.ExhibitCommand.Core.Entities;
@@ -20,7 +20,10 @@ public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
-    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
+    /// <summary>
+    /// semver.org principle used
+    /// </summary>
+    public override string Version => "1.0.0";
 
     protected override Exhibit? Result { get; set; }
 
