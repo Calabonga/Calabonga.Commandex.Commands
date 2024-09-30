@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Base.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.OperationResults;
 
@@ -15,7 +15,10 @@ public class HelloWorldCommandexCommand : EmptyCommandexCommand
 
     public override string Description => "Самый простой тип команды, которая есть в Commandex Framework. Команда ничего не возвращает полезного, только ошибку если она случиться.";
 
-    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
+    /// <summary>
+    /// semver.org principle used
+    /// </summary>
+    public override string Version => "1.0.0";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {

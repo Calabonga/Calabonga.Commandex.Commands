@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Base.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Dialogs;
 using Calabonga.Commandex.PersonWizardCommand.Core.ViewModels;
 
@@ -16,7 +16,10 @@ public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<P
 
     public override string Description => "Получение данных Ф.И.О от пользователя с разбиением на страницы (шаги wizard) с валидацией ввода.";
 
-    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
+    /// <summary>
+    /// semver.org principle used
+    /// </summary>
+    public override string Version => "1.0.0";
 
     protected override PersonWizardDialogViewModel SetResult(PersonWizardDialogViewModel result) => result;
 }

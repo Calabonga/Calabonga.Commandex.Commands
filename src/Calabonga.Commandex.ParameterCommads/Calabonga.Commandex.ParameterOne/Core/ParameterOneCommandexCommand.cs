@@ -1,4 +1,4 @@
-﻿using Calabonga.Commandex.Engine.Base.Commands;
+﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Settings;
 using Calabonga.OperationResults;
@@ -30,7 +30,11 @@ public class ParameterOneCommandexCommand : ParameterCommandexCommand<PersonData
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
     public override string DisplayName => "Parameter Command 1";
     public override string Description => "Команда, которая может создать параметр, чтобы его прочитала другая команда номер 2";
-    public override string Version => "1.0.0-rc.17.9.28"; //semver.org
+
+    /// <summary>
+    /// semver.org principle used
+    /// </summary>
+    public override string Version => "1.0.0";
 
     public override bool IsPushToShellEnabled => true;
 }

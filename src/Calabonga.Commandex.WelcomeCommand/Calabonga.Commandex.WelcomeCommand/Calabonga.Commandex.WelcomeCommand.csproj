@@ -7,6 +7,10 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
+	<ItemGroup>
+		<PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0" />
+	</ItemGroup>
+
 	<Target Name="CopyDLLs" AfterTargets="Build">
 		<Message Text="Executing Copy Command Task" Importance="High" />
 
@@ -18,9 +22,5 @@
 		<Message Text="Command $(ProjectName) successfully copied" Importance="High" />
 	</Target>
 
-	<ItemGroup>
-	  <PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0-rc.17" />
-	</ItemGroup>
-	
 
 </Project>
