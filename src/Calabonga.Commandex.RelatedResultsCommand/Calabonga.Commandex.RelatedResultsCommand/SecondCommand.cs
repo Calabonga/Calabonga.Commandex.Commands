@@ -24,7 +24,7 @@ internal class SecondCommand : ParameterCommandexCommand<CreatedAtParameter>
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.0.0";
+    public override string Version => "1.2.0";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {

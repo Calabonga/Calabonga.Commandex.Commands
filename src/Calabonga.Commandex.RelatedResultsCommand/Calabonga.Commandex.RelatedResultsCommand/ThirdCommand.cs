@@ -1,8 +1,11 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
+using Calabonga.Commandex.Engine.Extensions;
+using Calabonga.Commandex.Engine.Processors.Results;
 using Calabonga.Commandex.Engine.Settings;
 using Calabonga.OperationResults;
 using Microsoft.Extensions.Logging;
+using System.Text.Json;
 
 namespace Calabonga.Commandex.RelatedResultsCommand;
 
@@ -21,7 +24,7 @@ public class ThirdCommand : ParameterCommandexCommand<CreatedAtParameter>
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.0.0";
+    public override string Version => "1.2.0";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {
@@ -37,4 +40,11 @@ public class ThirdCommand : ParameterCommandexCommand<CreatedAtParameter>
     }
 
     public override bool IsPushToShellEnabled => true;
+
+    public override object? GetResult()
+    {
+        var parameter = ReadParameter();
+        var data = JsonSerializer.Serialize(parameter, JsonSerializerOptionsExt.Cyrillic);
+        return new ClipboardResult(data);
+    }
 }

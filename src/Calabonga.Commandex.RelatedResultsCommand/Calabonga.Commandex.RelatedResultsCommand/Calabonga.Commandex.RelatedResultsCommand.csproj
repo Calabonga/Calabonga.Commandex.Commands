@@ -7,10 +7,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Calabonga.Commandex.Engine" Version="1.0.0" />
-	</ItemGroup>
-
 	<Target Name="CopyDLLs" AfterTargets="Build">
 		<Message Text="Executing Copy Command Task" Importance="High" />
 
@@ -21,5 +17,9 @@
 		<Copy SourceFiles="$(TargetDir)$(ProjectName).dll;$(TargetDir)$(ProjectName).pdb" DestinationFolder="$(PublishedCommandsDir)" />
 		<Message Text="Command $(ProjectName) successfully copied" Importance="High" />
 	</Target>
+
+	<ItemGroup>
+	  <PackageReference Include="Calabonga.Commandex.Engine.Processors" Version="1.0.0" />
+	</ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Extensions;
+using Calabonga.Commandex.Engine.Processors.Results;
 using Calabonga.Commandex.ExhibitCommand.Core.Entities;
 using Calabonga.OperationResults;
 using System.Text.Json;
@@ -23,7 +24,7 @@ public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.0.0";
+    public override string Version => "1.2.0";
 
     protected override Exhibit? Result { get; set; }
 
@@ -41,5 +42,12 @@ public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
         response.EnsureSuccessStatusCode();
         var content = await response.Content.ReadAsStringAsync();
         return JsonSerializer.Deserialize<Exhibit>(content, JsonSerializerOptionsExt.Cyrillic);
+    }
+
+    public override object? GetResult()
+    {
+        var data = Result?.Content
+            .Replace("<br />", "\r\n");
+        return new ClipboardResult(data ?? string.Empty);
     }
 }

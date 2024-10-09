@@ -8,7 +8,5 @@ namespace Calabonga.Commandex.ParameterOne;
 public class ParameterOneCommandDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)
-    {
-        services.AddScoped<ICommandexCommand, ParameterOneCommandexCommand>();
-    }
+        => services.AddScoped<ICommandexCommand, ParameterOneCommandexCommand>();
 }

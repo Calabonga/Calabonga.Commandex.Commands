@@ -31,6 +31,9 @@ public partial class TaxPayerDialogResult : DefaultDialogResult
     /// </summary>
     public override ResizeMode ResizeMode => ResizeMode.NoResize;
 
+    public override SizeToContent SizeToContent => SizeToContent.WidthAndHeight;
+
+
     [RelayCommand(CanExecute = nameof(CanExecuteCheck))]
     private async Task ExecuteCheck()
     {
