@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:converters="clr-namespace:Calabonga.Commandex.TaxPayerStatusCommand.Core.Converters"
              mc:Ignorable="d" 
-             >
+             Width="400" Height="300">
     <UserControl.Resources>
         <converters:BooleanToBackgroundColorConverter x:Key="BooleanToBackgroundColorConverter"/>
     </UserControl.Resources>

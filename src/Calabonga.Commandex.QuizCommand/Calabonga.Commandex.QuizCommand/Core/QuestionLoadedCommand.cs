@@ -20,5 +20,5 @@ public class QuestionLoadedCommand : DialogCommandexCommand<QuizDialogView, View
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.0.0";
+    public override string Version => "1.2.0";
 }

@@ -1,7 +1,10 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Dialogs;
+using Calabonga.Commandex.Engine.Extensions;
+using Calabonga.Commandex.Engine.Processors.Results;
 using Calabonga.Commandex.TaxPayerStatusCommand.Core.ViewModels;
 using Calabonga.Commandex.TaxPayerStatusCommand.Core.Views;
+using System.Text.Json;
 
 namespace Calabonga.Commandex.TaxPayerStatusCommand.Core;
 
@@ -18,12 +21,18 @@ public class TaxPayerStatusCommandexCommand : DialogCommandexCommand<TaxPayerDia
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.0.0";
+    public override string Version => "1.2.0";
 
     public override bool IsPushToShellEnabled => true;
 
     protected override TaxPayerDialogResult SetResult(TaxPayerDialogResult result) => new()
     {
-        NalogResponse = result.NalogResponse,
+        NalogResponse = result.NalogResponse
     };
+
+    public override object GetResult()
+    {
+        var data = JsonSerializer.Serialize(Result, JsonSerializerOptionsExt.Cyrillic);
+        return new TextFileResult("TaxPayer.txt", data);
+    }
 }
