@@ -6,6 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Commandex.WelcomeCommand;
 
+/// <summary>
+/// Definition command
+/// </summary>
 public class WelcomeCommandDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)

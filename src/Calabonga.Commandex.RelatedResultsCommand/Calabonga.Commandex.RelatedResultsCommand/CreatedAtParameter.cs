@@ -8,7 +8,7 @@ namespace Calabonga.Commandex.RelatedResultsCommand;
 /// </summary>
 public class CreatedAtParameter : CommandexParameter
 {
-    public DateTime CreatedAt { get; set; }
+    public DateTime CreatedAt { get; init; }
 
     public string? RandomData { get; set; }
 }

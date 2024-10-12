@@ -15,7 +15,7 @@ public class CheckApiReadyCommandexCommand : ResultCommandexCommand<bool>
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.2.0";
+    public override string Version => "1.3.0";
 
     protected override bool Result { get; set; }
 

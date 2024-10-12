@@ -24,7 +24,7 @@ public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.2.0";
+    public override string Version => "1.3.0";
 
     protected override Exhibit? Result { get; set; }
 

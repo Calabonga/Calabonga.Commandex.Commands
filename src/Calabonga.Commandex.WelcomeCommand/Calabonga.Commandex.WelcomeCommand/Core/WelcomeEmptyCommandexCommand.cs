@@ -17,9 +17,7 @@ public class WelcomeEmptyCommandexCommand : EmptyCommandexCommand
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.2.0";
-
-
+    public override string Version => "1.3.0";
 
     public override bool IsPushToShellEnabled => true;
 
@@ -34,5 +32,4 @@ public class WelcomeEmptyCommandexCommand : EmptyCommandexCommand
     public override string DisplayName => "Добро пожаловать в модульность (Empty)";
 
     public override string Description => "Это демонстрация реализации команды для Commandex без возврата данных";
-
 }

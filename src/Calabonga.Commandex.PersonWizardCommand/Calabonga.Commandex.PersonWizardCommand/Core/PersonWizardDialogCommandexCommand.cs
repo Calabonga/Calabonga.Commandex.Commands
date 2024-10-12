@@ -26,11 +26,11 @@ public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<P
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.2.0";
+    public override string Version => "1.3.0";
 
     protected override PersonWizardDialogViewModel SetResult(PersonWizardDialogViewModel result) => result;
 
-    public override object? GetResult()
+    public override object GetResult()
     {
         var payload = Result?.Payload;
 
@@ -41,7 +41,7 @@ public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<P
 
         var person = (PersonViewModel)payload;
 
-        var data = JsonSerializer.Serialize(person, JsonSerializerOptionsExt.Cyrillic );
+        var data = JsonSerializer.Serialize(person, JsonSerializerOptionsExt.Cyrillic);
         var fileName = Transliterator.Run(person.LastName, SpaceReplace.Underscore, TransformMode.Url);
         return new TextFileResult(fileName, data);
     }

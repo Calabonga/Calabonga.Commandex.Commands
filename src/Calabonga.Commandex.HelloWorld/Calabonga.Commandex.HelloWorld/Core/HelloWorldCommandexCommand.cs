@@ -18,12 +18,10 @@ public class HelloWorldCommandexCommand : EmptyCommandexCommand
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.2.0";
+    public override string Version => "1.3.0";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
-    {
-        return Task.FromResult<OperationEmpty<ExecuteCommandexCommandException>>(Operation.Result());
-    }
+        => Task.FromResult<OperationEmpty<ExecuteCommandexCommandException>>(Operation.Result());
 
     public override bool IsPushToShellEnabled => true;
 }
