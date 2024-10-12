@@ -23,7 +23,7 @@ public class QuestionLoadedCommand : DialogCommandexCommand<QuizDialogView, Quiz
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.2.0";
+    public override string Version => "1.3.0";
 
     public override bool IsPushToShellEnabled => true;
 

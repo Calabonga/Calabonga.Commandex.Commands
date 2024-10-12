@@ -1,6 +1,5 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
-using Calabonga.Commandex.Engine.Processors.Results;
 using Calabonga.Commandex.WelcomeCommand.Core.Settings;
 using Calabonga.OperationResults;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,7 +20,7 @@ public class WelcomeResultCommandexCommand : ResultCommandexCommand<string>
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.2.0";
+    public override string Version => "1.3.0";
 
     public CurrentAppSettings AppSettings { get; }
 
@@ -40,7 +39,4 @@ public class WelcomeResultCommandexCommand : ResultCommandexCommand<string>
     public override string Description => "Это демонстрация реализации команды для Commandex с результатом";
 
     protected override string? Result { get; set; }
-
-    /// <summary>Returns result from command</summary>
-    public override object GetResult() => new ClipboardResult($"{CopyrightInfo} -> {DisplayName} -> {Description}");
 }
