@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace Calabonga.Commandex.QuizCommand.Core.ViewModels;
 
-public partial class QuizViewModel : DefaultViewModel
+public partial class QuizViewModel : DefaultDialogResult
 {
     private readonly HttpClient _client = new();
 
