@@ -6,6 +6,7 @@ using Calabonga.Commandex.PersonWizardCommand.Core.Entities;
 using Calabonga.Commandex.PersonWizardCommand.Core.ViewModels;
 using Calabonga.Utils.SymbolrCore;
 using System.Text.Json;
+using System.Reflection;
 
 namespace Calabonga.Commandex.PersonWizardCommand.Core;
 
@@ -26,7 +27,7 @@ public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<P
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.3.0";
+    public override string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
 
     protected override PersonWizardDialogViewModel SetResult(PersonWizardDialogViewModel result) => result;
 

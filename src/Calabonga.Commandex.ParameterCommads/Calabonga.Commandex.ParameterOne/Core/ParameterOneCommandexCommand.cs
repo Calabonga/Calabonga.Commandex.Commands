@@ -2,6 +2,7 @@
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Settings;
 using Calabonga.OperationResults;
+using System.Reflection;
 
 namespace Calabonga.Commandex.ParameterOne.Core;
 
@@ -34,7 +35,7 @@ public class ParameterOneCommandexCommand : ParameterCommandexCommand<PersonData
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.3.0";
+    public override string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
 
     public override bool IsPushToShellEnabled => true;
 }

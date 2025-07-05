@@ -2,6 +2,7 @@
 using Calabonga.Commandex.DialogCommand.Core.Views;
 using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Dialogs;
+using System.Reflection;
 
 namespace Calabonga.Commandex.DialogCommand.Core;
 
@@ -20,7 +21,7 @@ public class DialogCommandexCommand : DialogCommandexCommand<DemoDialogView, Dem
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.3.0";
+    public override string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
 
     public override bool IsPushToShellEnabled => true;
 }

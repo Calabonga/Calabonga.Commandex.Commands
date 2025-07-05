@@ -2,6 +2,7 @@
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.OperationResults;
 using Microsoft.Extensions.Logging;
+using System.Reflection;
 
 namespace Calabonga.Commandex.WelcomeCommand.Core;
 
@@ -17,7 +18,7 @@ public class WelcomeEmptyCommandexCommand : EmptyCommandexCommand
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.3.0";
+    public override string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
 
     public override bool IsPushToShellEnabled => true;
 

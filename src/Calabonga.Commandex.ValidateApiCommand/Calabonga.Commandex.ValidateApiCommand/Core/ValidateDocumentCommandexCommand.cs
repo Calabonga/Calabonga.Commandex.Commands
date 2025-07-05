@@ -1,6 +1,7 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.OperationResults;
+using System.Reflection;
 
 namespace Calabonga.Commandex.ValidateApiCommand.Core
 {
@@ -15,7 +16,7 @@ namespace Calabonga.Commandex.ValidateApiCommand.Core
         /// <summary>
         /// semver.org principle used
         /// </summary>
-        public override string Version => "1.3.0";
+        public override string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
 
         protected override ValidateResult? Result { get; set; }
 

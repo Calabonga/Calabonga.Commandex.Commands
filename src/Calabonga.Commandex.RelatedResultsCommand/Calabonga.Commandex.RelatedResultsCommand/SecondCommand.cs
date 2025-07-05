@@ -3,6 +3,7 @@ using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.Engine.Settings;
 using Calabonga.OperationResults;
 using Microsoft.Extensions.Logging;
+using System.Reflection;
 
 namespace Calabonga.Commandex.RelatedResultsCommand;
 
@@ -24,7 +25,7 @@ internal class SecondCommand : ParameterCommandexCommand<CreatedAtParameter>
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.3.0";
+    public override string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {

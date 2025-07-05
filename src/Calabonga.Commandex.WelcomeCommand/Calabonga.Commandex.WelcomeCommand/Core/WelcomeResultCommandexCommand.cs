@@ -3,6 +3,7 @@ using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.Commandex.WelcomeCommand.Core.Settings;
 using Calabonga.OperationResults;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace Calabonga.Commandex.WelcomeCommand.Core;
 
@@ -20,7 +21,7 @@ public class WelcomeResultCommandexCommand : ResultCommandexCommand<string>
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.3.0";
+    public override string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
 
     public CurrentAppSettings AppSettings { get; }
 

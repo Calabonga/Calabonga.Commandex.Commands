@@ -5,6 +5,7 @@ using Calabonga.Commandex.Engine.Processors.Results;
 using Calabonga.Commandex.ExhibitCommand.Core.Entities;
 using Calabonga.OperationResults;
 using System.Text.Json;
+using System.Reflection;
 
 namespace Calabonga.Commandex.ExhibitCommand.Core;
 
@@ -24,7 +25,7 @@ public class LoadExhibitCommandexCommand : ResultCommandexCommand<Exhibit?>
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.3.0";
+    public override string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
 
     protected override Exhibit? Result { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Exceptions;
 using Calabonga.OperationResults;
+using System.Reflection;
 
 namespace Calabonga.Commandex.HelloWorld.Core;
 
@@ -18,7 +19,7 @@ public class HelloWorldCommandexCommand : EmptyCommandexCommand
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.3.0";
+    public override string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
         => Task.FromResult<OperationEmpty<ExecuteCommandexCommandException>>(Operation.Result());

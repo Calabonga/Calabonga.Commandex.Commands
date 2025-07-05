@@ -5,6 +5,7 @@ using Calabonga.Commandex.Engine.Processors.Results;
 using Calabonga.Commandex.TaxPayerStatusCommand.Core.ViewModels;
 using Calabonga.Commandex.TaxPayerStatusCommand.Core.Views;
 using System.Text.Json;
+using System.Reflection;
 
 namespace Calabonga.Commandex.TaxPayerStatusCommand.Core;
 
@@ -21,7 +22,7 @@ public class TaxPayerStatusCommandexCommand : DialogCommandexCommand<TaxPayerDia
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.3.0";
+    public override string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
 
     public override bool IsPushToShellEnabled => true;
 

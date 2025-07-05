@@ -4,6 +4,7 @@ using Calabonga.Commandex.Engine.Processors.Results;
 using Calabonga.Commandex.QuizCommand.Core.ViewModels;
 using Calabonga.Commandex.QuizCommand.Core.Views;
 using System.Text;
+using System.Reflection;
 
 namespace Calabonga.Commandex.QuizCommand.Core;
 
@@ -23,7 +24,7 @@ public class QuestionLoadedCommand : DialogCommandexCommand<QuizDialogView, Quiz
     /// <summary>
     /// semver.org principle used
     /// </summary>
-    public override string Version => "1.3.0";
+    public override string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "N/A";
 
     public override bool IsPushToShellEnabled => true;
 
