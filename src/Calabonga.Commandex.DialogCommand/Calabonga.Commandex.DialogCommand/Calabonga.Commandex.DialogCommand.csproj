@@ -5,11 +5,11 @@
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Version>2.6.0</Version>
+		<Version>2.8.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Calabonga.Commandex.Engine" Version="2.6.0" />
+		<PackageReference Include="Calabonga.Commandex.Engine" Version="2.8.1" />
 	</ItemGroup>
 
 	<Target Name="CopyDLLs" AfterTargets="Build">
