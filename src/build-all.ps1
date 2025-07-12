@@ -2,8 +2,7 @@
 # Build all solutions in directory
 #
 
-if($PSVersionTable.PSVersion.Major -ge 7 `
-  -or ($PSVersionTable.PSVersion.Major -eq 7 -and $PSVersionTable.PSVersion.Minor -ge 2))
+if($PSVersionTable.PSVersion.Major -ge 7 -or ($PSVersionTable.PSVersion.Major -eq 7 -and $PSVersionTable.PSVersion.Minor -ge 2))
 {
     $PSStyle.Progress.View="Classic" # Backwards compatible
 }
@@ -14,10 +13,8 @@ $count = 0
 
 foreach ($solution in $solutions) 
 {
-    $complete = [math]::Round(($count / $solutions.Count) * 100)
-    
-	Start-Process -Wait -PassThru -NoNewWindow -FilePath "dotnet" -WorkingDirectory $solution.DirectoryName -ArgumentList "build","-c Release", "--nologo"
-
+	$process = Start-Process -Wait -PassThru -NoNewWindow -FilePath "dotnet" -WorkingDirectory $solution.DirectoryName -ArgumentList "build","-c Release", "--nologo"
+    Write-Host "Exit code $($solution.BaseName) is: $($process.ExitCode)"
     $count++    
 }
 
