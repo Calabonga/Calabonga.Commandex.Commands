@@ -5,11 +5,11 @@
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Version>2.8.1</Version>
+		<Version>3.0.0</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Calabonga.Commandex.Engine.Processors" Version="2.8.1" />
+		<PackageReference Include="Calabonga.Commandex.Engine.Processors" Version="3.0.0" />
 		<PackageReference Include="Calabonga.TokenGeneratorCore" Version="1.0.0" />
 	</ItemGroup>
 

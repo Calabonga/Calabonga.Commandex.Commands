@@ -5,8 +5,8 @@ using Calabonga.Commandex.Engine.Processors.Results;
 using Calabonga.Commandex.PersonWizardCommand.Core.Entities;
 using Calabonga.Commandex.PersonWizardCommand.Core.ViewModels;
 using Calabonga.Utils.SymbolrCore;
-using System.Text.Json;
 using System.Reflection;
+using System.Text.Json;
 
 namespace Calabonga.Commandex.PersonWizardCommand.Core;
 
@@ -41,6 +41,11 @@ public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<P
         }
 
         var person = (PersonViewModel)payload;
+
+        if (string.IsNullOrEmpty(person.FirstName) || string.IsNullOrEmpty(person.LastName) || string.IsNullOrEmpty(person.MiddleName))
+        {
+            return new TextFileResult("error.txt", "person is null");
+        }
 
         var data = JsonSerializer.Serialize(person, JsonSerializerOptionsExt.Cyrillic);
         var fileName = Transliterator.Run(person.LastName, SpaceReplace.Underscore, TransformMode.Url);
