@@ -12,4 +12,15 @@
 		<PackageReference Include="Calabonga.Commandex.Engine" Version="3.0.0" />
 	</ItemGroup>
 
+		<Target Name="CopyDLLs" AfterTargets="Build">
+		<Message Text="Executing Copy Command Task" Importance="High" />
+
+		<PropertyGroup>
+			<PublishedCommandsDir>..\..\..\..\Calabonga.Commandex.Shell\PublishedCommands</PublishedCommandsDir>
+		</PropertyGroup>
+
+		<Copy SourceFiles="$(TargetDir)$(ProjectName).dll;$(TargetDir)$(ProjectName).pdb" DestinationFolder="$(PublishedCommandsDir)" />
+		<Message Text="Command $(ProjectName) successfully copied" Importance="High" />
+	</Target>
+
 </Project>

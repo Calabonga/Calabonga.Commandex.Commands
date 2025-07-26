@@ -13,9 +13,9 @@ public class ZoneCommandCommandexCommand : ZoneCommandexCommand<ZoneCommandView,
 
     public override string CopyrightInfo => "Calabonga SOFT © 2025";
 
-    public override string DisplayName => "MySecondCommand";
+    public override string DisplayName => "Zone Command";
 
-    public override string Description => "My second commandex command for demo";
+    public override string Description => "This type of the Commandex Command will be open in Shell special zone (inline).";
 
     public override string Version => GetType().Assembly.GetName().Version?.ToString() ?? "0.0.0";
 }
