@@ -12,7 +12,7 @@ public partial class StepFinalViewModel : WizardStepViewModel<PersonViewModel>
     }
 
     [ObservableProperty]
-    private PersonViewModel _person;
+    private PersonViewModel? _person;
 
     public override void OnEnter(PersonViewModel? payload) => Person = payload!;
 }

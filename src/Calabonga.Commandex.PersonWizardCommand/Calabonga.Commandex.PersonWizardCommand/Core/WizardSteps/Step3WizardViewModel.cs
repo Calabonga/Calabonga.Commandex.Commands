@@ -16,7 +16,7 @@ public partial class Step3WizardViewModel : WizardStepValidationViewModel<Person
     [MinLength(5)]
     [NotifyDataErrorInfo]
     [ObservableProperty]
-    private string _lastName;
+    private string? _lastName;
 
     public override void OnEnter(PersonViewModel? payload)
     {
