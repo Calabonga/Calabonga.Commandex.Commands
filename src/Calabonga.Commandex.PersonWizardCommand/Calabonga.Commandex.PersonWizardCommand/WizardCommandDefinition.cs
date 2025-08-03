@@ -19,10 +19,10 @@ public class WizardCommandDefinition : AppDefinition
 
         services.AddWizard<PersonWizardDialogViewModel>();
 
-        services.AddWizardStep<Step1, Step1WizardViewModel, PersonViewModel>("Шаг №1");
-        services.AddWizardStep<Step2, Step2WizardViewModel, PersonViewModel>("Шаг №2");
-        services.AddWizardStep<Step3, Step3WizardViewModel, PersonViewModel>("Шаг №3");
-        services.AddWizardStep<StepFinal, StepFinalViewModel, PersonViewModel>("Итог");
+        services.AddWizardStep<Step1, Step1WizardViewModel, PersonViewModel>("Step 1");
+        services.AddWizardStep<Step2, Step2WizardViewModel, PersonViewModel>("Step 2");
+        services.AddWizardStep<Step3, Step3WizardViewModel, PersonViewModel>("Step 3");
+        services.AddWizardStep<StepFinal, StepFinalViewModel, PersonViewModel>("Total");
     }
 }
 
@@ -32,6 +32,6 @@ public class PersonWizardDialogCommandexCommandNugetDependency : INugetDependenc
     public Type Type => typeof(PersonWizardDialogCommandexCommand);
 
     public List<NugetDependency> Dependencies => [
-        new NugetDependency() { Name = "Calabonga.Utils.SymbolrCore", Version = "3.0.0" }
+        new() { Name = "Calabonga.Utils.SymbolrCore", Version = "3.0.0" }
     ];
 }

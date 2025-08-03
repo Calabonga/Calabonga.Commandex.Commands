@@ -1,10 +1,9 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Dialogs;
 using Calabonga.Commandex.Engine.Extensions;
-using Calabonga.Commandex.Engine.Processors.Results;
 using Calabonga.Commandex.PersonWizardCommand.Core.Entities;
 using Calabonga.Commandex.PersonWizardCommand.Core.ViewModels;
-using Calabonga.Utils.SymbolrCore;
+using Microsoft.Extensions.Logging;
 using System.Reflection;
 using System.Text.Json;
 
@@ -12,15 +11,20 @@ namespace Calabonga.Commandex.PersonWizardCommand.Core;
 
 public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<PersonWizardDialogViewModel>
 {
-    public PersonWizardDialogCommandexCommand(IDialogService dialogService) : base(dialogService)
+    private readonly ILogger<PersonWizardDialogCommandexCommand> _logger;
+
+    public PersonWizardDialogCommandexCommand(
+        ILogger<PersonWizardDialogCommandexCommand> logger,
+        IDialogService dialogService) : base(dialogService)
     {
+        _logger = logger;
     }
 
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
     public override string DisplayName => "Person Wizard";
 
-    public override string Description => "Получение данных Ф.И.О от пользователя с разбиением на страницы (шаги wizard) с валидацией ввода.";
+    public override string Description => "Register user FirstName, MiddleName and LastName";
 
     public override bool IsPushToShellEnabled => true;
 
@@ -31,24 +35,25 @@ public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<P
 
     protected override PersonWizardDialogViewModel SetResult(PersonWizardDialogViewModel result) => result;
 
-    public override object GetResult()
+    public override object? GetResult()
     {
         var payload = Result?.Payload;
 
-        if (payload is null)
+        if (payload is not PersonViewModel person)
         {
-            return new TextFileResult("error.txt", "person is null");
+            return null;
         }
 
-        var person = (PersonViewModel)payload;
-
-        if (string.IsNullOrEmpty(person.FirstName) || string.IsNullOrEmpty(person.LastName) || string.IsNullOrEmpty(person.MiddleName))
+        try
         {
-            return new TextFileResult("error.txt", "person is null");
-        }
+            var data = JsonSerializer.Serialize(person, JsonSerializerOptionsExt.Cyrillic);
+            _logger.LogInformation(data);
 
-        var data = JsonSerializer.Serialize(person, JsonSerializerOptionsExt.Cyrillic);
-        var fileName = Transliterator.Run(person.LastName, SpaceReplace.Underscore, TransformMode.Url);
-        return new TextFileResult(fileName, data);
+            return data;
+        }
+        catch
+        {
+            return null;
+        }
     }
 }

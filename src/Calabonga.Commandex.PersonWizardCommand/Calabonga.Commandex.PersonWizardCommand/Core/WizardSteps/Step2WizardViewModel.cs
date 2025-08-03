@@ -5,12 +5,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Calabonga.Commandex.PersonWizardCommand.Core.WizardSteps;
 
+/// <summary>
+/// The second step wizard ViewModel
+/// </summary>
 public partial class Step2WizardViewModel : WizardStepValidationViewModel<PersonViewModel>
 {
     public Step2WizardViewModel()
     {
         Title = "Step 2";
     }
+
     [Required]
     [MinLength(5)]
     [ObservableProperty]

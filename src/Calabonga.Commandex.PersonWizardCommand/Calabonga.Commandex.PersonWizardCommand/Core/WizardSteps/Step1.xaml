@@ -3,16 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:wizardSteps="clr-namespace:Calabonga.Commandex.PersonWizardCommand.Core.WizardSteps"
-             mc:Ignorable="d" 
-             d:DataContext="{d:DesignInstance wizardSteps:Step1WizardViewModel}"
-             >
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0" Text="FirstName:" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <TextBox Grid.Column="1" Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="150" Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+             mc:Ignorable="d" >
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="FirstName" Margin="0 0 0 8"/>
+        <TextBox Grid.Row="1" Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 HorizontalAlignment="Stretch" 
+                 VerticalAlignment="Top"/>
     </Grid>
 </UserControl>

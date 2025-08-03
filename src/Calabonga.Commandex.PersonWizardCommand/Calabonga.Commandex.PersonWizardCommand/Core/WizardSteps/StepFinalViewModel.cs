@@ -4,7 +4,10 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Calabonga.Commandex.PersonWizardCommand.Core.WizardSteps;
 
-public partial class StepFinalViewModel : WizardStepViewModel<PersonViewModel>
+/// <summary>
+/// The final  step wizard ViewModel
+/// </summary>
+public sealed partial class StepFinalViewModel : WizardStepViewModel<PersonViewModel>
 {
     public StepFinalViewModel()
     {

@@ -8,9 +8,9 @@ using System.Windows;
 namespace Calabonga.Commandex.PersonWizardCommand.Core.ViewModels;
 
 /// <summary>
-/// // Calabonga: Summary required (PersonWizardDialogViewModel 2024-08-13 11:45)
+/// Person ViewModel Wizard Commandex Command
 /// </summary>
-public class PersonWizardDialogViewModel : WizardDialogViewModel<PersonViewModel>
+public sealed class PersonWizardDialogViewModel : WizardDialogViewModel<PersonViewModel>
 {
     private readonly ILogger<PersonWizardDialogViewModel> _logger;
 
@@ -19,16 +19,20 @@ public class PersonWizardDialogViewModel : WizardDialogViewModel<PersonViewModel
         IWizardManager<PersonViewModel> manager) : base(manager)
     {
         _logger = logger;
-        Title = "Демонстрация Wizard";
+        Title = "Person data wizard";
     }
 
-    protected override PersonViewModel InitializeContext() => new();
+    protected override PersonViewModel InitializeContext()
+    {
+        return new PersonViewModel();
+    }
 
     protected override void OnWizardFinishedExecute(PersonViewModel? payload)
     {
         if (payload is null)
         {
             _logger.LogInformation("Payload is null");
+
             return;
         }
 

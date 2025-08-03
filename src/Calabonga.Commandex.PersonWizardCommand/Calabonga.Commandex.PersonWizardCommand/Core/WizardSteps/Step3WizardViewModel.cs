@@ -5,6 +5,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Calabonga.Commandex.PersonWizardCommand.Core.WizardSteps;
 
+/// <summary>
+/// The third step wizard ViewModel
+/// </summary>
 public partial class Step3WizardViewModel : WizardStepValidationViewModel<PersonViewModel>
 {
     public Step3WizardViewModel()
