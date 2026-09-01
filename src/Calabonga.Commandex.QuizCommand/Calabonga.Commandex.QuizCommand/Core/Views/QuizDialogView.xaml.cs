@@ -6,7 +6,7 @@ namespace Calabonga.Commandex.QuizCommand.Core.Views
     /// <summary>
     /// Interaction logic for QuizDialogView.xaml
     /// </summary>
-    public partial class QuizDialogView : UserControl, IDialogView
+    public sealed partial class QuizDialogView : UserControl, IDialogView
     {
         public QuizDialogView()
         {

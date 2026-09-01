@@ -1,6 +1,6 @@
 ﻿namespace Calabonga.Commandex.QuizCommand.Core.Entities;
 
-public class Question
+public sealed class Question
 {
     public Guid Id { get; set; }
 

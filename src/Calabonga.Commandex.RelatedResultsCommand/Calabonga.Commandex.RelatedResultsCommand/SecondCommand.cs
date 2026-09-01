@@ -10,7 +10,7 @@ namespace Calabonga.Commandex.RelatedResultsCommand;
 /// <summary>
 /// 
 /// </summary>
-internal class SecondCommand : ParameterCommandexCommand<CreatedAtParameter>
+public sealed class SecondCommand : ParameterCommandexCommand<CreatedAtParameter>
 {
     private readonly ILogger<SecondCommand> _logger;
 

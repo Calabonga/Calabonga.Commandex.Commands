@@ -6,7 +6,7 @@ namespace Calabonga.Commandex.PersonWizardCommand.Core.WizardSteps;
 /// <summary>
 /// Interaction logic for Step1.xaml
 /// </summary>
-public partial class Step1 : UserControl, IWizardStepView
+public sealed partial class Step1 : UserControl, IWizardStepView
 {
     public Step1()
     {

@@ -1,8 +1,8 @@
 ﻿using Calabonga.Commandex.Engine.Base;
 
-namespace Calabonga.Commandex.ParameterTwo.Core;
+namespace Calabonga.Commandex.ParameterOne.Core;
 
-public class PersonData : CommandexParameter
+public sealed class PersonData : CommandexParameter
 {
     public string? FirstName { get; set; }
 

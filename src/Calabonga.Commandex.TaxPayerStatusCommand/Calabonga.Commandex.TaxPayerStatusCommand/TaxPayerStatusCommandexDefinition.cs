@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Commandex.TaxPayerStatusCommand;
 
-public class TaxPayerStatusCommandexDefinition : AppDefinition
+public sealed class TaxPayerStatusCommandexDefinition : AppDefinition
 {
     /// <summary>
     /// Configure services for current application
@@ -22,7 +22,7 @@ public class TaxPayerStatusCommandexDefinition : AppDefinition
     }
 }
 
-public class TaxPayerStatusCommandNugetDependency : INugetDependency
+public sealed class TaxPayerStatusCommandNugetDependency : INugetDependency
 {
     public Type Type => typeof(TaxPayerStatusCommandexCommand);
 

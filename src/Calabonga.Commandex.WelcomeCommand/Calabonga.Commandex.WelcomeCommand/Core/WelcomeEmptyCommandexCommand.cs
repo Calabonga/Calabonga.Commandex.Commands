@@ -7,9 +7,9 @@ using System.Reflection;
 namespace Calabonga.Commandex.WelcomeCommand.Core;
 
 /// <summary>
-/// // Calabonga: Summary required (WelcomeEmptyCommandexCommand 2024-08-11 11:20)
+/// Demo command that completes without returning any data (logs execution only).
 /// </summary>
-public class WelcomeEmptyCommandexCommand : EmptyCommandexCommand
+public sealed class WelcomeEmptyCommandexCommand : EmptyCommandexCommand
 {
     private readonly ILogger<WelcomeEmptyCommandexCommand> _logger;
 

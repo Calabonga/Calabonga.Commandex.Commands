@@ -6,7 +6,7 @@ using System.Windows;
 
 namespace Calabonga.Commandex.DialogCommand.Core.ViewModels;
 
-public partial class DemoDialogResult : DefaultDialogWithValidationResult
+public sealed partial class DemoDialogResult : DefaultDialogWithValidationResult
 {
     public DemoDialogResult()
     {
@@ -17,18 +17,21 @@ public partial class DemoDialogResult : DefaultDialogWithValidationResult
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(SaveCommand))]
     [NotifyDataErrorInfo]
-    private string _firstName;
+    private string _firstName = string.Empty;
 
     [Required]
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(SaveCommand))]
     [NotifyDataErrorInfo]
-    private string _lastName;
+    private string _lastName = string.Empty;
 
     [RelayCommand(CanExecute = nameof(CanSaveCommand))]
     private void Save()
     {
-        ((Window)Owner!).Close();
+        if (Owner is Window window)
+        {
+            window.Close();
+        }
     }
 
     private bool CanSaveCommand => !string.IsNullOrEmpty(FirstName) && !string.IsNullOrEmpty(LastName);

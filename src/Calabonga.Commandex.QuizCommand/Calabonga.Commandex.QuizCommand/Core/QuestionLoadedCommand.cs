@@ -9,9 +9,9 @@ using System.Reflection;
 namespace Calabonga.Commandex.QuizCommand.Core;
 
 /// <summary>
-/// // Calabonga: Summary required (QuestionLoadedCommand 2024-08-16 07:20)
+/// Demo dialog command that loads a quiz question from a remote service and returns it as a ClipboardResult.
 /// </summary>
-public class QuestionLoadedCommand : DialogCommandexCommand<QuizDialogView, QuizViewModel>
+public sealed class QuestionLoadedCommand : DialogCommandexCommand<QuizDialogView, QuizViewModel>
 {
     public QuestionLoadedCommand(IDialogService dialogService) : base(dialogService) { }
 
@@ -30,15 +30,17 @@ public class QuestionLoadedCommand : DialogCommandexCommand<QuizDialogView, Quiz
 
     public override object GetResult()
     {
-        var result = (QuizViewModel)Result!;
+        var question = ((QuizViewModel)Result!).Question
+                       ?? throw new InvalidOperationException("Question is not loaded.");
+
         var stringBuilder = new StringBuilder();
-        stringBuilder.AppendLine($"Вопрос: {result.Question!.QuestionText}");
-        stringBuilder.AppendLine($"Из категории: {result.Question!.CategoryName}");
-        stringBuilder.AppendLine($"A: {result.Question!.AnswerA}");
-        stringBuilder.AppendLine($"B: {result.Question!.AnswerB}");
-        stringBuilder.AppendLine($"C: {result.Question!.AnswerC}");
-        stringBuilder.AppendLine($"D: {result.Question!.AnswerD}");
-        stringBuilder.AppendLine($"правильный вариант: {result.Question!.CorrectAnswer.ToString()}");
+        stringBuilder.AppendLine($"Вопрос: {question.QuestionText}");
+        stringBuilder.AppendLine($"Из категории: {question.CategoryName}");
+        stringBuilder.AppendLine($"A: {question.AnswerA}");
+        stringBuilder.AppendLine($"B: {question.AnswerB}");
+        stringBuilder.AppendLine($"C: {question.AnswerC}");
+        stringBuilder.AppendLine($"D: {question.AnswerD}");
+        stringBuilder.AppendLine($"правильный вариант: {question.CorrectAnswer}");
         return new ClipboardResult(stringBuilder.ToString());
     }
 }

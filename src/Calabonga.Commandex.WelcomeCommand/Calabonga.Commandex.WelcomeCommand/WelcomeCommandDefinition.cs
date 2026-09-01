@@ -9,7 +9,7 @@ namespace Calabonga.Commandex.WelcomeCommand;
 /// <summary>
 /// Definition command
 /// </summary>
-public class WelcomeCommandDefinition : AppDefinition
+public sealed class WelcomeCommandDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)
     {

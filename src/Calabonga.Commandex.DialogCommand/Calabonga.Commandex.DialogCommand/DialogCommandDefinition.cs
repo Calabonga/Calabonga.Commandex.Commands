@@ -7,11 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Commandex.DialogCommand;
 
-public class DialogCommandDefinition : AppDefinition
+public sealed class DialogCommandDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)
     {
-        services.AddScoped<ICommandexCommand, DialogCommandexCommand>();
+        services.AddScoped<ICommandexCommand, DemoDialogCommandexCommand>();
         services.AddScoped<DemoDialogResult>();
         services.AddScoped<DemoDialogView>();
     }

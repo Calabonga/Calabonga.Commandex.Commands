@@ -6,9 +6,9 @@ using System.Reflection;
 
 namespace Calabonga.Commandex.DialogCommand.Core;
 
-public class DialogCommandexCommand : DialogCommandexCommand<DemoDialogView, DemoDialogResult>
+public sealed class DemoDialogCommandexCommand : DialogCommandexCommand<DemoDialogView, DemoDialogResult>
 {
-    public DialogCommandexCommand(IDialogService dialogService) : base(dialogService)
+    public DemoDialogCommandexCommand(IDialogService dialogService) : base(dialogService)
     {
     }
 

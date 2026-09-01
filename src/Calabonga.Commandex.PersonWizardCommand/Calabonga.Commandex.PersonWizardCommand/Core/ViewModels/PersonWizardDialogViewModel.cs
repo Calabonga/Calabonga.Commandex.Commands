@@ -36,7 +36,7 @@ public sealed class PersonWizardDialogViewModel : WizardDialogViewModel<PersonVi
             return;
         }
 
-        _logger.LogInformation(JsonSerializer.Serialize(payload, JsonSerializerOptionsExt.Cyrillic));
+        _logger.LogInformation("{Payload}", JsonSerializer.Serialize(payload, JsonSerializerOptionsExt.Cyrillic));
     }
 
     public override ResizeMode ResizeMode => ResizeMode.CanResize;

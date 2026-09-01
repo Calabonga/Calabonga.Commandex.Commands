@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace Calabonga.Commandex.RelatedResultsCommand;
 
-public class FirstCommand : ParameterCommandexCommand<CreatedAtParameter>
+public sealed class FirstCommand : ParameterCommandexCommand<CreatedAtParameter>
 {
     private readonly ILogger<FirstCommand> _logger;
 

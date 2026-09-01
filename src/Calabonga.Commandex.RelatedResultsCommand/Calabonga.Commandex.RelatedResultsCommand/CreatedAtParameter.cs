@@ -6,7 +6,7 @@ namespace Calabonga.Commandex.RelatedResultsCommand;
 /// <summary>
 /// Simple parameter for demo
 /// </summary>
-public class CreatedAtParameter : CommandexParameter
+public sealed class CreatedAtParameter : CommandexParameter
 {
     public DateTime CreatedAt { get; init; }
 

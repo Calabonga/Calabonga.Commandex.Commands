@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Commandex.QuizCommand;
 
-public class QuestionLoaderDefinition : AppDefinition
+public sealed class QuestionLoaderDefinition : AppDefinition
 {
     /// <summary>
     /// Configure services for current application

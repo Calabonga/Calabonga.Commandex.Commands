@@ -1,26 +1,43 @@
-## Commands For Commandex
+# Commands For Commandex
 
-Examples ot the commands implementations for Commandex.
+Example command implementations for **Commandex** — each project is a standalone WPF class library
+(`net10.0-windows8.0`) with its own `.sln`, demonstrating one `ICommandexCommand` type from
+`Calabonga.Commandex.Engine`. A post-build `CopyDLLs` target copies the built `.dll`/`.pdb` into
+`Calabonga.Commandex.Shell/PublishedCommands` so the Shell can pick the command up by reflection.
+
+## Examples
+
+| Solution | Command type | Demonstrates |
+| --- | --- | --- |
+| `Calabonga.Commandex.HelloWorld` | `EmptyCommandexCommand` | the simplest "fire and forget" command |
+| `Calabonga.Commandex.WelcomeCommand` | `EmptyCommandexCommand` + `ResultCommandexCommand<string>` | two command types in one project; settings via `SettingsBase` + keyed DI |
+| `Calabonga.Commandex.ValidateApiCommand` | `ResultCommandexCommand<bool>` + `ResultCommandexCommand<ValidateResult>` | returning a simple and a composite result, and returning an error |
+| `Calabonga.Commandex.DialogCommand` | `DialogCommandexCommand<TView, TResult>` | a modal dialog with input validation |
+| `Calabonga.Commandex.QuizCommand` | `DialogCommandexCommand<…>` | dialog + `GetResult()` → `ClipboardResult` |
+| `Calabonga.Commandex.TaxPayerStatusCommand` | `DialogCommandexCommand<…>` | real call to the FNS service; `GetResult()` → `TextFileResult`; `INugetDependency` |
+| `Calabonga.Commandex.PersonWizardCommand` | `WizardDialogCommandexCommand<TViewModel>` | a 4-step wizard with a `PersonViewModel` payload; `INugetDependency` |
+| `Calabonga.Commandex.ParameterCommands` | `ParameterCommandexCommand<PersonData>` ×2 | two commands exchanging data through a `.prm` file |
+| `Calabonga.Commandex.RelatedResultsCommand` | `ParameterCommandexCommand<CreatedAtParameter>` ×3 | a chain of commands; the last one returns a result |
+| `Calabonga.Commandex.ZoneCommand` | `ZoneCommandexCommand<TView, TViewModel>` | hosting a view inline in the Shell `MainZone` instead of a window |
 
 ## What is Calabonga.Commandex
 
-The `Calabonga.Commandex` - This is an application on WPF-platform built with CommunityToolkit.MVVM for modules (plugins) using: launch and execute.
+The `Calabonga.Commandex` — a WPF application built with CommunityToolkit.Mvvm that launches and
+executes modules (plugins):
 
-What is the `Calabonga.Commandex` can:
-* Find a modules `.dll` (plugins) in the folder you set up.
-* Launch or execute modules `.dll` (plughis) from GUI.
-* Get the results of the module's (plugis) work after they completed.
+* finds module `.dll` files (plugins) in a configured folder;
+* launches or executes them from the GUI;
+* collects the result of a module's work after it completes.
 
-It's a complex solution with a few repositories:
+It is a solution spread across several repositories:
 
-* **[Calabonga.Commandex.Shell](https://github.com/Calabonga/Calabonga.Commandex.Shell)** →  Command Executer or Command Launcher. To run commands of any type for any purpose. For example, to execute a stored procedure or just to copy some files to some destination.
-* **[Calabonga.Commandex.Commands](https://github.com/Calabonga/Calabonga.Commandex.Commands)** →  Commands for Calabonga.Commandex.Shell that can execute them from unified shell.
-* **[Calabonga.Commandex.Shell.Develop.Template](https://github.com/Calabonga/Calabonga.Commandex.Shell.Develop.Template)** →  (`Tool Template`) This is a Developer version of the Command Executer Shell (`Calabonga.Commandex`). Which is created to runs commands of any type for any purposes. For example, to execute a stored procedure or just to co…
-* **[Calabonga.Commandex.Engine](https://github.com/Calabonga/Calabonga.Commandex.Engine)** →  Engine and contracts library for Calabonga.Commandex. Contracts are using for developing a modules for Commandex Shell.
-* **[Calabonga.Commandex.Engine.Processors](https://github.com/Calabonga/Calabonga.Commandex.Engine.Processors)** →  Results Processors for Calabonga.Commandex.Shell commands execution results. This is an extended version of the just show string in the notification dialog.
-* **[Calabonga.CommandexCommand.Template](https://github.com/Calabonga/Calabonga.CommandexCommand.Template)** →  (`Tool Template`) This is a template of the project to create a Command for Commandex. Just install this nuget as a template for Visual Studio (Rider or dotnet CLI) and then you can create a DialogCommand faster.
-
+* **[Calabonga.Commandex.Shell](https://github.com/Calabonga/Calabonga.Commandex.Shell)** — the command executer / launcher.
+* **[Calabonga.Commandex.Commands](https://github.com/Calabonga/Calabonga.Commandex.Commands)** — this repository, example commands.
+* **[Calabonga.Commandex.Shell.Develop.Template](https://github.com/Calabonga/Calabonga.Commandex.Shell.Develop.Template)** — `dotnet new` template of a trimmed Shell for debugging a single command in place.
+* **[Calabonga.Commandex.Engine](https://github.com/Calabonga/Calabonga.Commandex.Engine)** — engine and contracts library.
+* **[Calabonga.Commandex.Engine.Processors](https://github.com/Calabonga/Calabonga.Commandex.Engine.Processors)** — additional result processors on top of the Engine.
+* **[Calabonga.CommandexCommand.Template](https://github.com/Calabonga/Calabonga.CommandexCommand.Template)** — `dotnet new` templates for creating a Commandex command.
 
 ## Video
 
-In this repository [Calabonga.Commandex.Shell](https://github.com/Calabonga/Calabonga.Commandex.Shell) there are many videos about Commandex.
+The [Calabonga.Commandex.Shell](https://github.com/Calabonga/Calabonga.Commandex.Shell) repository has many videos about Commandex.

@@ -4,7 +4,7 @@ using System.Windows.Media;
 
 namespace Calabonga.Commandex.TaxPayerStatusCommand.Core.Converters;
 
-public class BooleanToBackgroundColorConverter : IValueConverter
+public sealed class BooleanToBackgroundColorConverter : IValueConverter
 {
     /// <summary>Converts a value.</summary>
     /// <param name="value">The value produced by the binding source.</param>
