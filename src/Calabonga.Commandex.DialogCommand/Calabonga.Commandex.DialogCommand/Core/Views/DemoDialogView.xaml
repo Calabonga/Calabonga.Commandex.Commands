@@ -8,9 +8,9 @@
                    mc:Ignorable="d" 
                    d:DataContext ="{d:DesignInstance viewModels:DemoDialogResult}"
                    Height="300" Width="400">
-    <StackPanel>
-        <TextBox Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-        <Button Content="Save" Command="{Binding SaveCommand}" />
+    <StackPanel Margin="10">
+        <TextBox Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+        <TextBox Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+        <Button Content="Save" Command="{Binding SaveCommand}" Margin="5" Width="100" />
     </StackPanel>
 </dialogs:DefaultDialogView>
