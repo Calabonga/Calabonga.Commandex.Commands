@@ -34,15 +34,20 @@ public sealed partial class TaxPayerDialogResult : DefaultDialogResult
     [RelayCommand(CanExecute = nameof(CanExecuteCheck))]
     private async Task ExecuteCheck()
     {
-        var response = await _client.PostAsJsonAsync("/api/v1/tracker/taxpayer_status", new
+        try
         {
-            inn = Value,
-            requestDate = DateTime.UtcNow.ToString("yyyy-MM-dd")
-        });
+            var response = await _client.PostAsJsonAsync("/api/v1/tracker/taxpayer_status", new { inn = Value, requestDate = DateTime.UtcNow.ToString("yyyy-MM-dd") });
 
-        Value = string.Empty;
-
-        NalogResponse = await response.Content.ReadFromJsonAsync<NalogResponse>();
+            NalogResponse = await response.Content.ReadFromJsonAsync<NalogResponse>();
+        }
+        catch (OperationCanceledException)
+        {
+            NalogResponse = new NalogResponse() { Message = "Request was canceled." };
+        }
+        catch (Exception)
+        {
+            NalogResponse = new NalogResponse() { Message = "An error occurred while processing the request." };
+        }
     }
 
     private bool CanExecuteCheck => !string.IsNullOrEmpty(Value) && Value.Length is >= 10 and <= 12;

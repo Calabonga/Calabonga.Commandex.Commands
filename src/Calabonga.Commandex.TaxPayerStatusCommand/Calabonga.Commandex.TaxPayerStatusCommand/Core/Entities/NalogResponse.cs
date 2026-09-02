@@ -5,7 +5,7 @@ namespace Calabonga.Commandex.TaxPayerStatusCommand.Core.Entities;
 /// <summary>
 /// Response from nalog.ru
 /// </summary>
-public sealed class NalogResponse
+public sealed record NalogResponse
 {
     /// <summary>
     /// Status of employee

@@ -4,8 +4,8 @@ using Calabonga.Commandex.Engine.Extensions;
 using Calabonga.Commandex.Engine.Processors.Results;
 using Calabonga.Commandex.TaxPayerStatusCommand.Core.ViewModels;
 using Calabonga.Commandex.TaxPayerStatusCommand.Core.Views;
-using System.Text.Json;
 using System.Reflection;
+using System.Text.Json;
 
 namespace Calabonga.Commandex.TaxPayerStatusCommand.Core;
 
@@ -26,14 +26,23 @@ public sealed class TaxPayerStatusCommandexCommand : DialogCommandexCommand<TaxP
 
     public override bool IsPushToShellEnabled => true;
 
-    protected override TaxPayerDialogResult SetResult(TaxPayerDialogResult result) => new()
-    {
-        NalogResponse = result.NalogResponse
-    };
+    protected override TaxPayerDialogResult SetResult(TaxPayerDialogResult result) => new() { NalogResponse = result.NalogResponse, Value = result.Value };
 
     public override object GetResult()
     {
-        var data = JsonSerializer.Serialize(Result, JsonSerializerOptionsExt.Cyrillic);
-        return new TextFileResult("TaxPayer.txt", data);
+        var data = "No data";
+        var fileName = "TaxPayer.txt";
+        if (Result is not TaxPayerDialogResult result)
+        {
+            return new TextFileResult(fileName, data);
+        }
+
+        data = JsonSerializer.Serialize(result.NalogResponse, JsonSerializerOptionsExt.Cyrillic);
+        if (result.Value is not null)
+        {
+            fileName = $"{result.Value}.txt";
+        }
+
+        return new TextFileResult(fileName, data);
     }
 }

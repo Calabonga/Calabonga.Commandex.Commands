@@ -9,7 +9,7 @@ Guidance for Claude Code (claude.ai/code) when working in the **`Calabonga.Comma
 
 Набор **самостоятельных проектов-примеров команд** для Commandex — по одному-два `.sln` на каждый пример, общего solution нет. Каждый проект — WPF class library (`net10.0-windows8.0`, `UseWPF=true`), реализующая один из типов `ICommandexCommand` из `Calabonga.Commandex.Engine`. Собранная `.dll` подключается к `Shell` (не через project reference, а копированием в `Calabonga.Commandex.Shell/PublishedCommands` — см. ниже).
 
-Тип в терминах версионирования рабочего пространства — **Samples**: мажорная версия всех проектов равна мажорной версии Framework (сейчас `4`), минор/патч инкрементируются самостоятельно. В NuGet ничего не публикуется, **CI нет** (`.github/` содержит только `FUNDING.yml`).
+Тип в терминах версионирования рабочего пространства — **Samples**: мажорная версия всех проектов равна мажорной версии Framework (сейчас `5`), минор/патч инкрементируются самостоятельно. В NuGet ничего не публикуется, **CI нет** (`.github/` содержит только `FUNDING.yml`).
 
 ## Проекты-примеры
 
@@ -30,7 +30,8 @@ Guidance for Claude Code (claude.ai/code) when working in the **`Calabonga.Comma
 
 ## Сборка
 
-Общего solution нет — собирается каждый `.sln` отдельно:
+
+Общего solution нет. Для сборки всех команда в `src` можно использовать `build-all.ps1` в той же папке. А можно собирать каждый `.sln` отдельно:
 
 ```bash
 dotnet build src/Calabonga.Commandex.DialogCommand/Calabonga.Commandex.DialogCommand.sln -c Release
@@ -55,7 +56,7 @@ dotnet build src/Calabonga.Commandex.DialogCommand/Calabonga.Commandex.DialogCom
 
 ## Версионирование
 
-- Мажор всех проектов = мажор Framework (`Engine`). Сейчас все на `<Version>4.0.0</Version>` и `PackageReference … Version="4.0.0"`.
+- Мажор всех проектов = мажор Framework (`Engine`). Сейчас все на `<Version>5.0.1</Version>` и `PackageReference … Version="5.0.1"`.
 - Framework поднял минор/патч → подтянуть новую версию `Engine`/`Engine.Processors` в `PackageReference` и инкрементировать только свой `patch`.
 - Framework поднял мажор → все проекты переезжают на новый мажор.
 
