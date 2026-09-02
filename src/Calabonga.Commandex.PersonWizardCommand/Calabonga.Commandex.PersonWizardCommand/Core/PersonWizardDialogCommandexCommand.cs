@@ -9,7 +9,7 @@ using System.Text.Json;
 
 namespace Calabonga.Commandex.PersonWizardCommand.Core;
 
-public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<PersonWizardDialogViewModel>
+public sealed class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<PersonWizardDialogViewModel>
 {
     private readonly ILogger<PersonWizardDialogCommandexCommand> _logger;
 
@@ -47,7 +47,7 @@ public class PersonWizardDialogCommandexCommand : WizardDialogCommandexCommand<P
         try
         {
             var data = JsonSerializer.Serialize(person, JsonSerializerOptionsExt.Cyrillic);
-            _logger.LogInformation(data);
+            _logger.LogInformation("{Data}", data);
 
             return data;
         }

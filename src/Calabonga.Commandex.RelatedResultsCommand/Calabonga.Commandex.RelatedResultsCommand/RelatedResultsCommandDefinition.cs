@@ -4,12 +4,12 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Commandex.RelatedResultsCommand;
 
-public class RelatedResultsCommandDefinition : AppDefinition
+public sealed class RelatedResultsCommandDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)
     {
-        services.AddTransient<ICommandexCommand, FirstCommand>();
-        services.AddTransient<ICommandexCommand, SecondCommand>();
-        services.AddTransient<ICommandexCommand, ThirdCommand>();
+        services.AddScoped<ICommandexCommand, FirstCommand>();
+        services.AddScoped<ICommandexCommand, SecondCommand>();
+        services.AddScoped<ICommandexCommand, ThirdCommand>();
     }
 }

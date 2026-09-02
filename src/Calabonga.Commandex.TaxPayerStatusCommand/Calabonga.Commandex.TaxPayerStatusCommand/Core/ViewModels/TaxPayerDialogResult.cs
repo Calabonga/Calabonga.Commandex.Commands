@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace Calabonga.Commandex.TaxPayerStatusCommand.Core.ViewModels;
 
-public partial class TaxPayerDialogResult : DefaultDialogResult
+public sealed partial class TaxPayerDialogResult : DefaultDialogResult
 {
     private readonly HttpClient _client = new();
 
@@ -26,9 +26,6 @@ public partial class TaxPayerDialogResult : DefaultDialogResult
     [ObservableProperty]
     private NalogResponse? _nalogResponse;
 
-    /// <summary>
-    /// // Calabonga: Summary required (IDialogResult 2024-08-02 10:09)
-    /// </summary>
     public override ResizeMode ResizeMode => ResizeMode.NoResize;
 
     public override SizeToContent SizeToContent => SizeToContent.WidthAndHeight;

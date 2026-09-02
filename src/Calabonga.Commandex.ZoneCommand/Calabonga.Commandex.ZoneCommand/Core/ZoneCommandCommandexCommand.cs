@@ -1,11 +1,11 @@
 ﻿using Calabonga.Commandex.Engine.Commands;
 using Calabonga.Commandex.Engine.Zones;
-using Calabonga.ZoneCommandexCommand.Core.ViewModels;
-using Calabonga.ZoneCommandexCommand.Core.Views;
+using Calabonga.Commandex.ZoneCommand.Core.ViewModels;
+using Calabonga.Commandex.ZoneCommand.Core.Views;
 
-namespace Calabonga.ZoneCommandexCommand.Core;
+namespace Calabonga.Commandex.ZoneCommand.Core;
 
-public class ZoneCommandCommandexCommand : ZoneCommandexCommand<ZoneCommandView, ZoneCommandViewModel>
+public sealed class ZoneCommandCommandexCommand : ZoneCommandexCommand<ZoneCommandView, ZoneCommandViewModel>
 {
     public ZoneCommandCommandexCommand(IZoneManager zoneManager) : base(zoneManager)
     {

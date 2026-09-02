@@ -10,7 +10,7 @@ using System.Reflection;
 
 namespace Calabonga.Commandex.RelatedResultsCommand;
 
-public class ThirdCommand : ParameterCommandexCommand<CreatedAtParameter>
+public sealed class ThirdCommand : ParameterCommandexCommand<CreatedAtParameter>
 {
     private readonly ILogger<ThirdCommand> _logger;
 

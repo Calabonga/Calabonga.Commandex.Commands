@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace Calabonga.Commandex.ParameterOne.Core;
 
-public class ParameterOneCommandexCommand : ParameterCommandexCommand<PersonData>
+public sealed class ParameterOneCommandexCommand : ParameterCommandexCommand<PersonData>
 {
     public ParameterOneCommandexCommand(IAppSettings appSettings) : base(appSettings)
     {

@@ -1,13 +1,13 @@
 ﻿using Calabonga.Commandex.Engine.Base;
 using Calabonga.Wpf.AppDefinitions;
-using Calabonga.ZoneCommandexCommand.Core;
-using Calabonga.ZoneCommandexCommand.Core.ViewModels;
-using Calabonga.ZoneCommandexCommand.Core.Views;
+using Calabonga.Commandex.ZoneCommand.Core;
+using Calabonga.Commandex.ZoneCommand.Core.ViewModels;
+using Calabonga.Commandex.ZoneCommand.Core.Views;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Calabonga.ZoneCommandexCommand;
+namespace Calabonga.Commandex.ZoneCommand;
 
-public class ZoneCommandCommandexCommandDefinition : AppDefinition
+public sealed class ZoneCommandCommandexCommandDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)
     {

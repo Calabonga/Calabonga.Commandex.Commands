@@ -1,8 +1,8 @@
 ﻿namespace Calabonga.Commandex.ValidateApiCommand.Core;
 
-public class ValidateResult
+public sealed record ValidateResult
 {
-    public string Name { get; set; } = null!;
+    public required string Name { get; init; }
 
-    public bool IsExists { get; set; }
+    public bool IsExists { get; init; }
 }

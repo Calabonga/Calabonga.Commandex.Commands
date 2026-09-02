@@ -8,9 +8,9 @@ using System.Reflection;
 namespace Calabonga.Commandex.WelcomeCommand.Core;
 
 /// <summary>
-/// // Calabonga: Summary required (WelcomeCommandexCommand 2024-08-11 10:49)
+/// Demo command that returns a string result taken from the command settings.
 /// </summary>
-public class WelcomeResultCommandexCommand : ResultCommandexCommand<string>
+public sealed class WelcomeResultCommandexCommand : ResultCommandexCommand<string>
 {
     public WelcomeResultCommandexCommand(
         [FromKeyedServices(nameof(WelcomeCommandDefinition))]

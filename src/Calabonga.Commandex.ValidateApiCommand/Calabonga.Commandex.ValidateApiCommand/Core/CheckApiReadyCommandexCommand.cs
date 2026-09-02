@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Calabonga.Commandex.ValidateApiCommand.Core;
 
-public class CheckApiReadyCommandexCommand : ResultCommandexCommand<bool>
+public sealed class CheckApiReadyCommandexCommand : ResultCommandexCommand<bool>
 {
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 
@@ -22,15 +22,7 @@ public class CheckApiReadyCommandexCommand : ResultCommandexCommand<bool>
 
     public override Task<OperationEmpty<ExecuteCommandexCommandException>> ExecuteCommandAsync()
     {
-        var value = Random.Shared.Next(0, 2);
-        var boolValue = value switch
-        {
-            0 => "False",
-            1 => "True",
-            _ => throw new ArgumentOutOfRangeException()
-        };
-
-        Result = bool.Parse(boolValue);
+        Result = Random.Shared.Next(0, 2) == 1;
         return Task.FromResult<OperationEmpty<ExecuteCommandexCommandException>>(Operation.Result());
     }
 

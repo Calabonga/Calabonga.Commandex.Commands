@@ -8,7 +8,7 @@ namespace Calabonga.Commandex.HelloWorld.Core;
 /// <summary>
 /// Empty command with no results for Shell
 /// </summary>
-public class HelloWorldCommandexCommand : EmptyCommandexCommand
+public sealed class HelloWorldCommandexCommand : EmptyCommandexCommand
 {
     public override string CopyrightInfo => "Calabonga SOFT © 2024";
 

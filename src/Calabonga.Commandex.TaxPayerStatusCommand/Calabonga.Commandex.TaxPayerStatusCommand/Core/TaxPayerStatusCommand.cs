@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace Calabonga.Commandex.TaxPayerStatusCommand.Core;
 
-public class TaxPayerStatusCommandexCommand : DialogCommandexCommand<TaxPayerDialogView, TaxPayerDialogResult>
+public sealed class TaxPayerStatusCommandexCommand : DialogCommandexCommand<TaxPayerDialogView, TaxPayerDialogResult>
 {
     public TaxPayerStatusCommandexCommand(IDialogService dialogService) : base(dialogService) { }
 

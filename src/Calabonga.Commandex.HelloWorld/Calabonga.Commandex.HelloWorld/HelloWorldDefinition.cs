@@ -5,10 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Commandex.HelloWorld;
 
-public class HelloWorldDefinition : AppDefinition
+public sealed class HelloWorldDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)
     {
-        services.AddTransient<ICommandexCommand, HelloWorldCommandexCommand>();
+        services.AddScoped<ICommandexCommand, HelloWorldCommandexCommand>();
     }
 }

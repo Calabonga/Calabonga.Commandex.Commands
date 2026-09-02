@@ -3,9 +3,9 @@ using Calabonga.Commandex.Engine.Zones;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace Calabonga.ZoneCommandexCommand.Core.ViewModels;
+namespace Calabonga.Commandex.ZoneCommand.Core.ViewModels;
 
-public partial class ZoneCommandViewModel : ZoneViewModelBase
+public sealed partial class ZoneCommandViewModel : ZoneViewModelBase
 {
     public ZoneCommandViewModel(ICommandexCommand command)
     {

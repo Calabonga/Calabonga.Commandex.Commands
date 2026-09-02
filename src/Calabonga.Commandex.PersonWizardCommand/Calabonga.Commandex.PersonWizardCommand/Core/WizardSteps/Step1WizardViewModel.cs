@@ -8,7 +8,7 @@ namespace Calabonga.Commandex.PersonWizardCommand.Core.WizardSteps;
 /// <summary>
 /// The first step wizard ViewModel
 /// </summary>
-public partial class Step1WizardViewModel : WizardStepValidationViewModel<PersonViewModel>
+public sealed partial class Step1WizardViewModel : WizardStepValidationViewModel<PersonViewModel>
 {
     public Step1WizardViewModel()
     {

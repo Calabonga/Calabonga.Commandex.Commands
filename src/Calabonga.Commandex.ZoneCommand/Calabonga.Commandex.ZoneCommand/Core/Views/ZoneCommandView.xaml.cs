@@ -1,11 +1,11 @@
 ﻿using Calabonga.Commandex.Engine.Zones;
 using System.Windows.Controls;
 
-namespace Calabonga.ZoneCommandexCommand.Core.Views;
+namespace Calabonga.Commandex.ZoneCommand.Core.Views;
 /// <summary>
 /// Interaction logic for ZoneCommandView.xaml
 /// </summary>
-public partial class ZoneCommandView : UserControl, IZoneView
+public sealed partial class ZoneCommandView : UserControl, IZoneView
 {
     public ZoneCommandView()
     {

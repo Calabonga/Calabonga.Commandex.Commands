@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Commandex.PersonWizardCommand;
 
-public class WizardCommandDefinition : AppDefinition
+public sealed class WizardCommandDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)
     {
@@ -27,7 +27,7 @@ public class WizardCommandDefinition : AppDefinition
 }
 
 
-public class PersonWizardDialogCommandexCommandNugetDependency : INugetDependency
+public sealed class PersonWizardDialogCommandexCommandNugetDependency : INugetDependency
 {
     public Type Type => typeof(PersonWizardDialogCommandexCommand);
 

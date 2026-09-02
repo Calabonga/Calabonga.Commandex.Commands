@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Commandex.ParameterTwo;
 
-public class ParameterTwoCommandDefinition : AppDefinition
+public sealed class ParameterTwoCommandDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)
         => services.AddScoped<ICommandexCommand, ParameterTwoCommandexCommand>();

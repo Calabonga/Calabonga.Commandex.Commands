@@ -5,11 +5,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Calabonga.Commandex.ValidateApiCommand;
 
-public class ValidateApiCommandDefinition : AppDefinition
+public sealed class ValidateApiCommandDefinition : AppDefinition
 {
     public override void ConfigureServices(IServiceCollection services)
     {
-        services.AddTransient<ICommandexCommand, CheckApiReadyCommandexCommand>();
-        services.AddTransient<ICommandexCommand, ValidateDocumentCommandexCommand>();
+        services.AddScoped<ICommandexCommand, CheckApiReadyCommandexCommand>();
+        services.AddScoped<ICommandexCommand, ValidateDocumentCommandexCommand>();
     }
 }
